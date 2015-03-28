@@ -1,0 +1,23 @@
+env:
+    node: true
+
+rules:
+    indent: 4
+    quotes: [2, "double", "avoid-escape"]
+    brace-style: [2, "1tbs"]
+    comma-style: [2, "last"]
+    default-case: 2
+    func-style: [2, "declaration"]
+    guard-for-in: 2
+    no-floating-decimal: 2
+    no-nested-ternary: 2
+    no-undefined: 2
+    radix: 2
+    space-before-function-parentheses: [2, { anonymous: "always", named: "never" }]
+    space-after-keywords: [2, "always"]
+    space-before-blocks: [2, "always"]
+    spaced-line-comment: [2, "always", { exceptions: ["-"]}]
+    strict: [2, "global"]
+    valid-jsdoc: [2, { requireReturn: false, requireParamDescription: true }]
+    wrap-iife: 2
+    no-multi-spaces: 0
