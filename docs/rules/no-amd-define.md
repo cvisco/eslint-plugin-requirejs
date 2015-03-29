@@ -60,6 +60,7 @@ If you want to use AMD-style module definitions, then it is safe to disable this
 ## Related Rules
 
 * [no-invalid-define](no-invalid-define.md)
+* [no-multiple-define](no-multiple-define.md)
 * [no-object-define](no-object-define.md)
 * [no-function-define](no-function-define.md)
 * [no-named-define](no-named-define.md)

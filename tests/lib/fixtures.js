@@ -6,6 +6,7 @@ module.exports = {
         // Always Invalid
         EMPTY: "define();",
         NONSENSE: "define('foo', 'bar', false);",
+        MULTIPLE: "define({ foo: 'bar' }); define(function () { return true; })",
 
         // Valid unless disabled
         OBJECT: "define({ a: 'foo', b: 'bar' });",

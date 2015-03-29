@@ -3,6 +3,7 @@
 module.exports = {
     rules: {
         "no-invalid-define": require("./lib/rules/no-invalid-define"),
+        "no-multiple-define": require("./lib/rules/no-multiple-define"),
         "no-object-define": require("./lib/rules/no-object-define"),
         "no-function-define": require("./lib/rules/no-function-define"),
         "no-amd-define": require("./lib/rules/no-amd-define"),
@@ -10,7 +11,12 @@ module.exports = {
         "no-commonjs-wrapper": require("./lib/rules/no-commonjs-wrapper")
     },
     rulesConfig: {
+
+        // Potential Errors
         "no-invalid-define": 2,
+        "no-multiple-define": 2,
+
+        // Stylistic Choices
         "no-object-define": 0,
         "no-function-define": 0,
         "no-amd-define": 0,

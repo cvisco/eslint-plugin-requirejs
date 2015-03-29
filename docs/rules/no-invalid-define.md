@@ -47,6 +47,7 @@ You should probably *not* disable this rule.
 
 ## Related Rules
 
+* [no-multiple-define](no-multiple-define.md)
 * [no-object-define](no-object-define.md)
 * [no-function-define](no-function-define.md)
 * [no-amd-define](no-amd-define.md)

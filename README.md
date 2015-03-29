@@ -32,6 +32,7 @@ Enable the rules that you would like to use.
 {
   "rules": {
     "requirejs/no-invalid-define": 2,
+    "requirejs/no-multiple-define": 2,
     "requirejs/no-object-define": 1,
     "requirejs/no-function-define": 2,
     "requirejs/no-amd-define": 0,
@@ -44,6 +45,7 @@ Enable the rules that you would like to use.
 # List of supported rules
 
 * [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid module definitions
+* [no-multiple-define](docs/rules/no-multiple-define.md): Disallow multiple module definitions in one file
 * [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define` (off by default)
 * [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define` (off by default)
 * [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define` (off by default)
@@ -52,7 +54,6 @@ Enable the rules that you would like to use.
 
 ## To Do
 
-* no-multiple-define: Disallow multiple `define` calls in a single file
 * no-exports: Disallow assignment to `exports` or `module.exports` when using CommonJS wrapper, prefer return instead
 * require-return: Enforce returning a value from module definition functions
 * validate-relative: Make sure `require` is declared as a dependency if using relative dependency paths inside a module
