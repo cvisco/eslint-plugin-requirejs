@@ -1,18 +1,21 @@
-# Disallow invalid forms of `define` (no-invalid-define)
+# Disallow use of Simple Name/Value Pairs form of `define` (no-object-define)
 
 ## Rule Details
 
-This rule aims to prevent malformed `define` calls.
+This rule aims to prevent usage of plain object module definitions.
 
-Any pattern except for the following are warnings:
+The following patterns are considered warnings:
 
 ```js
-// Simple Name/Value Pairs
 define({
     a: 'foo',
     b: 'bar'
 });
+```
 
+The following patterns are not warnings:
+
+```js
 // Definition Function
 define(function () {
     /* ... */
@@ -39,20 +42,18 @@ define(function (require) {
 
 ## When Not To Use It
 
-You should probably *not* disable this rule.
+If you want to use plain object modules, then it is safe to disable this rule.
 
 ## Further Reading
 
-* [Define a Module](http://requirejs.org/docs/api.html#define)
+* [Simple Name/Value Pairs](http://requirejs.org/docs/api.html#defsimple)
 
 ## Related Rules
 
-* [no-object-define](no-object-define.md)
+* [no-invalid-define](no-invalid-define.md)
 * [no-function-define](no-function-define.md)
 * [no-amd-define](no-amd-define.md)
 * [no-named-define](no-named-define.md)
 * [no-commonjs-wrapper](no-commonjs-wrapper.md)
-
-
 
 

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for `no-invalid-define` rule
+ * @fileoverview Tests for `no-object-define` rule
  * @author Casey Visco <cvisco@gmail.com>
  */
 
@@ -20,10 +20,9 @@ var eslint = require("eslint"),
 
 var eslintTester = new ESLintTester(eslint.linter);
 
-eslintTester.addRuleTest("lib/rules/no-invalid-define", {
+eslintTester.addRuleTest("lib/rules/no-object-define", {
 
     valid: [
-        fixtures.define.OBJECT,
         fixtures.define.FUNCTION,
         fixtures.define.COMMONJS_1,
         fixtures.define.COMMONJS_2,
@@ -36,16 +35,9 @@ eslintTester.addRuleTest("lib/rules/no-invalid-define", {
 
     invalid: [
         {
-            code: fixtures.define.EMPTY,
+            code: fixtures.define.OBJECT,
             errors: [{
-                message: "Invalid module definition",
-                type: "CallExpression"
-            }]
-        },
-        {
-            code: fixtures.define.NONSENSE,
-            errors: [{
-                message: "Invalid module definition",
+                message: "Simple Name/Value Pairs form of `define` is not allowed",
                 type: "CallExpression"
             }]
         }

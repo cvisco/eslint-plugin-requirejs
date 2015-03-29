@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for `no-invalid-define` rule
+ * @fileoverview Tests for `no-named-define` rule
  * @author Casey Visco <cvisco@gmail.com>
  */
 
@@ -20,7 +20,7 @@ var eslint = require("eslint"),
 
 var eslintTester = new ESLintTester(eslint.linter);
 
-eslintTester.addRuleTest("lib/rules/no-invalid-define", {
+eslintTester.addRuleTest("lib/rules/no-named-define", {
 
     valid: [
         fixtures.define.OBJECT,
@@ -29,23 +29,21 @@ eslintTester.addRuleTest("lib/rules/no-invalid-define", {
         fixtures.define.COMMONJS_2,
         fixtures.define.COMMONJS_3,
         fixtures.define.AMD,
-        fixtures.define.AMD_EMPTY,
-        fixtures.define.AMD_NAMED,
-        fixtures.define.AMD_NAMED_EMPTY
+        fixtures.define.AMD_EMPTY
     ],
 
     invalid: [
         {
-            code: fixtures.define.EMPTY,
+            code: fixtures.define.AMD_NAMED,
             errors: [{
-                message: "Invalid module definition",
+                message: "Named module form of `define` is not allowed",
                 type: "CallExpression"
             }]
         },
         {
-            code: fixtures.define.NONSENSE,
+            code: fixtures.define.AMD_NAMED_EMPTY,
             errors: [{
-                message: "Invalid module definition",
+                message: "Named module form of `define` is not allowed",
                 type: "CallExpression"
             }]
         }

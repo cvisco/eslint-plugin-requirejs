@@ -1,10 +1,24 @@
-# Disallow invalid forms of `define` (no-invalid-define)
+# Disallow use of named module form of `define` (no-named-define)
 
 ## Rule Details
 
-This rule aims to prevent malformed `define` calls.
+This rule aims to prevent usage of named module definitions.
 
-Any pattern except for the following are warnings:
+The following patterns are considered warnings:
+
+```js
+// Named module with dependencies
+define('path/to/baz', ['path/to/foo'], function (foo) {
+    /* ... */
+});
+
+// Named module with no dependencies
+define('path/to/baz', [], function () {
+    /* ... */
+});
+```
+
+The following patterns are not warnings:
 
 ```js
 // Simple Name/Value Pairs
@@ -23,11 +37,6 @@ define(['path/to/foo', 'path/to/bar'], function (foo, bar) {
     /* ... */
 });
 
-// Named Module with Dependencies
-define('path/to/baz', ['path/to/foo'], function (foo) {
-    /* ... */
-});
-
 // Simplified CommonJS Wrapper
 define(function (require) {
     var foo = require('path/to/foo'),
@@ -39,20 +48,17 @@ define(function (require) {
 
 ## When Not To Use It
 
-You should probably *not* disable this rule.
+If you want to use named modules, then it is safe to disable this rule.
 
 ## Further Reading
 
-* [Define a Module](http://requirejs.org/docs/api.html#define)
+* [Define a Module with a Name](http://requirejs.org/docs/api.html#modulename)
 
 ## Related Rules
 
+* [no-invalid-define](no-invalid-define.md)
 * [no-object-define](no-object-define.md)
 * [no-function-define](no-function-define.md)
 * [no-amd-define](no-amd-define.md)
-* [no-named-define](no-named-define.md)
 * [no-commonjs-wrapper](no-commonjs-wrapper.md)
-
-
-
 

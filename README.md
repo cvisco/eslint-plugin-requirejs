@@ -16,7 +16,7 @@ If you installed `ESLint` globally, you have to install the RequireJS plugin glo
 
 # Configuration
 
-Add the `plugins` section to your config file and specify `eslint-plugin-requirejs` as a plugin.
+Add the `plugins` section to your [config](http://eslint.org/docs/user-guide/configuring) file and specify `eslint-plugin-requirejs` as a plugin.
 
 ```json
 {
@@ -32,20 +32,30 @@ Enable the rules that you would like to use.
 {
   "rules": {
     "requirejs/no-invalid-define": 2,
+    "requirejs/no-object-define": 1,
+    "requirejs/no-function-define": 2,
+    "requirejs/no-amd-define": 0,
+    "requirejs/no-named-define": 2,
+    "requirejs/no-commonjs-wrapper": 2
   }
 }
 ```
 
 # List of supported rules
 
-* [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid or undesired forms of `define`
+* [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid module definitions
+* [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define` (off by default)
+* [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define` (off by default)
+* [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define` (off by default)
+* [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define` (off by default)
+* [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper (off by default)
 
 ## To Do
 
-* Split options of no-invalid-define into own rules for easier config
 * no-multiple-define: Disallow multiple `define` calls in a single file
 * no-exports: Disallow assignment to `exports` or `module.exports` when using CommonJS wrapper, prefer return instead
 * require-return: Enforce returning a value from module definition functions
+* validate-relative: Make sure `require` is declared as a dependency if using relative dependency paths inside a module
 
 # License
 

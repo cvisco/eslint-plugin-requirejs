@@ -1,10 +1,18 @@
-# Disallow invalid forms of `define` (no-invalid-define)
+# Disallow use of simple function definition form of `define` (no-function-define)
 
 ## Rule Details
 
-This rule aims to prevent malformed `define` calls.
+This rule aims to prevent usage of simple function definitions.
 
-Any pattern except for the following are warnings:
+The following patterns are considered warnings:
+
+```js
+define(function () {
+    /* ... */
+});
+```
+
+The following patterns are not warnings:
 
 ```js
 // Simple Name/Value Pairs
@@ -13,8 +21,8 @@ define({
     b: 'bar'
 });
 
-// Definition Function
-define(function () {
+// Definition Function with No Dependencies
+define([], function () {
     /* ... */
 });
 
@@ -23,7 +31,7 @@ define(['path/to/foo', 'path/to/bar'], function (foo, bar) {
     /* ... */
 });
 
-// Named Module with Dependencies
+// Named module
 define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
@@ -39,20 +47,16 @@ define(function (require) {
 
 ## When Not To Use It
 
-You should probably *not* disable this rule.
+If you want to use simple definition functions with no dependency list, then it is safe to disable this rule.
 
 ## Further Reading
 
-* [Define a Module](http://requirejs.org/docs/api.html#define)
+* [Definition Functions](http://requirejs.org/docs/api.html#deffunc)
 
 ## Related Rules
 
+* [no-invalid-define](no-invalid-define.md)
 * [no-object-define](no-object-define.md)
-* [no-function-define](no-function-define.md)
 * [no-amd-define](no-amd-define.md)
 * [no-named-define](no-named-define.md)
 * [no-commonjs-wrapper](no-commonjs-wrapper.md)
-
-
-
-
