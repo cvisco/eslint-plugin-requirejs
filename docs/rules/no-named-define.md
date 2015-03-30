@@ -53,13 +53,3 @@ If you want to use named modules, then it is safe to disable this rule.
 ## Further Reading
 
 * [Define a Module with a Name](http://requirejs.org/docs/api.html#modulename)
-
-## Related Rules
-
-* [no-invalid-define](no-invalid-define.md)
-* [no-multiple-define](no-multiple-define.md)
-* [no-object-define](no-object-define.md)
-* [no-function-define](no-function-define.md)
-* [no-amd-define](no-amd-define.md)
-* [no-commonjs-wrapper](no-commonjs-wrapper.md)
-

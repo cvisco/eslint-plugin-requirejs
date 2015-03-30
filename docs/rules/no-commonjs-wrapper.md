@@ -65,13 +65,3 @@ If you want to use the Simplified CommonJS Wrapper, then it is safe to disable t
 ## Further Reading
 
 * [Define a Module with Simplified CommonJS Wrapper](http://requirejs.org/docs/api.html#cjsmodule)
-
-## Related Rules
-
-* [no-invalid-define](no-invalid-define.md)
-* [no-multiple-define](no-multiple-define.md)
-* [no-object-define](no-object-define.md)
-* [no-function-define](no-function-define.md)
-* [no-amd-define](no-amd-define.md)
-* [no-named-define](no-named-define.md)
-

@@ -47,14 +47,3 @@ If you want to use plain object modules, then it is safe to disable this rule.
 ## Further Reading
 
 * [Simple Name/Value Pairs](http://requirejs.org/docs/api.html#defsimple)
-
-## Related Rules
-
-* [no-invalid-define](no-invalid-define.md)
-* [no-multiple-define](no-multiple-define.md)
-* [no-function-define](no-function-define.md)
-* [no-amd-define](no-amd-define.md)
-* [no-named-define](no-named-define.md)
-* [no-commonjs-wrapper](no-commonjs-wrapper.md)
-
-

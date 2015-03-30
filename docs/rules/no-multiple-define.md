@@ -26,13 +26,3 @@ You should probably *not* disable this rule.
 ## Further Reading
 
 * [RequireJS Module Notes](http://requirejs.org/docs/api.html#modulenotes)
-
-## Related Rules
-
-* [no-invalid-define](no-invalid-define.md)
-* [no-object-define](no-object-define.md)
-* [no-function-define](no-function-define.md)
-* [no-amd-define](no-amd-define.md)
-* [no-named-define](no-named-define.md)
-* [no-commonjs-wrapper](no-commonjs-wrapper.md)
-

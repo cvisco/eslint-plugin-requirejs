@@ -52,12 +52,3 @@ If you want to use simple definition functions with no dependency list, then it 
 ## Further Reading
 
 * [Definition Functions](http://requirejs.org/docs/api.html#deffunc)
-
-## Related Rules
-
-* [no-invalid-define](no-invalid-define.md)
-* [no-multiple-define](no-multiple-define.md)
-* [no-object-define](no-object-define.md)
-* [no-amd-define](no-amd-define.md)
-* [no-named-define](no-named-define.md)
-* [no-commonjs-wrapper](no-commonjs-wrapper.md)
