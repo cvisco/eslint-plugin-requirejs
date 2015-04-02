@@ -1,6 +1,8 @@
 # eslint-plugin-requirejs
 
-[![Maintenance Status][status-image]][status-url] [![Build Status][travis-image]][travis-url]
+[![Maintenance Status][status-image]][status-url]
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 Enforce code conventions for RequireJS modules with ESLint
 
@@ -67,3 +69,6 @@ eslint-plugin-requirejs is licensed under the [MIT License](http://www.opensourc
 
 [travis-url]: https://travis-ci.org/cvisco/eslint-plugin-requirejs
 [travis-image]: http://img.shields.io/travis/cvisco/eslint-plugin-requirejs/master.svg?style=flat-square
+
+[coveralls-url]: https://coveralls.io/r/cvisco/eslint-plugin-requirejs?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/cvisco/eslint-plugin-requirejs/master.svg?style=flat-square
