@@ -8,13 +8,15 @@ module.exports = {
         "no-function-define": require("./lib/rules/no-function-define"),
         "no-amd-define": require("./lib/rules/no-amd-define"),
         "no-named-define": require("./lib/rules/no-named-define"),
-        "no-commonjs-wrapper": require("./lib/rules/no-commonjs-wrapper")
+        "no-commonjs-wrapper": require("./lib/rules/no-commonjs-wrapper"),
+        "no-assign-exports": require("./lib/rules/no-assign-exports")
     },
     rulesConfig: {
 
         // Potential Errors
         "no-invalid-define": 2,
         "no-multiple-define": 2,
+        "no-assign-exports": 2,
 
         // Stylistic Choices
         "no-object-define": 0,

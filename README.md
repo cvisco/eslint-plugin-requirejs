@@ -52,6 +52,7 @@ Enable the rules that you would like to use, for example:
 * [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define` (off by default)
 * [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define` (off by default)
 * [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper (off by default)
+* [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
 
 ### Don't see the rule you're looking for?
 
