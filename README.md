@@ -53,6 +53,7 @@ Enable the rules that you would like to use, for example:
 * [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define` (off by default)
 * [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper (off by default)
 * [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
+* [no-commonjs-return](docs/rules/no-commonjs-return.md): Disallow use of `return` statement in a module definition when using Simplified CommonJS Wrapper (off by default)
 
 ### Don't see the rule you're looking for?
 
