@@ -45,14 +45,19 @@ Enable the rules that you would like to use, for example:
 
 # List of supported rules
 
+### Possible Errors
+
 * [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid module definitions
 * [no-multiple-define](docs/rules/no-multiple-define.md): Disallow multiple module definitions in one file
+* [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
+
+### Stylistic Choices
+
 * [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define` (off by default)
 * [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define` (off by default)
 * [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define` (off by default)
 * [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define` (off by default)
 * [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper (off by default)
-* [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
 * [no-commonjs-return](docs/rules/no-commonjs-return.md): Disallow use of `return` statement in a module definition when using Simplified CommonJS Wrapper (off by default)
 
 ### Don't see the rule you're looking for?
