@@ -11,7 +11,7 @@
 
 var eslint = require("eslint"),
     ESLintTester = require("eslint-tester"),
-    fixtures = require("../fixtures");
+    fixtures = require("../../fixtures");
 
 
 //------------------------------------------------------------------------------
@@ -23,31 +23,31 @@ var eslintTester = new ESLintTester(eslint.linter);
 eslintTester.addRuleTest("lib/rules/no-commonjs-wrapper", {
 
     valid: [
-        fixtures.define.OBJECT,
-        fixtures.define.FUNCTION,
-        fixtures.define.AMD,
-        fixtures.define.AMD_NAMED,
-        fixtures.define.AMD_EMPTY,
-        fixtures.define.AMD_NAMED_EMPTY
+        fixtures.OBJECT_DEFINE,
+        fixtures.FUNCTION_DEFINE,
+        fixtures.AMD_DEFINE,
+        fixtures.AMD_NAMED_DEFINE,
+        fixtures.AMD_EMPTY_DEFINE,
+        fixtures.AMD_NAMED_EMPTY_DEFINE
     ],
 
     invalid: [
         {
-            code: fixtures.define.COMMONJS_1,
+            code: fixtures.CJS_WITH_RETURN,
             errors: [{
                 message: "Simplified CommonJS Wrapper form of `define` is not allowed",
                 type: "CallExpression"
             }]
         },
         {
-            code: fixtures.define.COMMONJS_2,
+            code: fixtures.CJS_WITH_EXPORTS,
             errors: [{
                 message: "Simplified CommonJS Wrapper form of `define` is not allowed",
                 type: "CallExpression"
             }]
         },
         {
-            code: fixtures.define.COMMONJS_3,
+            code: fixtures.CJS_WITH_MODULE_EXPORTS,
             errors: [{
                 message: "Simplified CommonJS Wrapper form of `define` is not allowed",
                 type: "CallExpression"

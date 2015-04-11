@@ -35,7 +35,7 @@
     "eslint": ">=0.9.0"
   },
   "scripts": {
-    "test": "npm run-script lint && mocha ./tests/lib/rules/",
+    "test": "npm run-script lint && mocha --reporter dot ./tests/lib/rules/",
     "test-travis": "npm run-script lint && ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./tests/lib/*",
     "lint": "eslint ."
   }
