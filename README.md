@@ -5,7 +5,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 
-Enforce code conventions for RequireJS modules with ESLint
+Enforce code conventions for [RequireJS](http://requirejs.org) modules with ESLint
 
 # Installation
 
