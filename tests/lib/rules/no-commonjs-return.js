@@ -38,7 +38,7 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-return", {
         {
             code: fixtures.CJS_WITH_RETURN,
             errors: [{
-                message: "Unexpected `return` in module definition. Use `exports` or `module.exports` instead.",
+                message: "Unexpected `return` in module definition.",
                 type: "ReturnStatement"
             }]
         }
