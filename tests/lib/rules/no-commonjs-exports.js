@@ -40,7 +40,7 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-exports", {
             code: fixtures.CJS_WITH_EXPORTS,
             errors: [{
                 message: "Unexpected use of `exports` in module definition.",
-                type: "MemberExpression"
+                type: "AssignmentExpression"
             }]
         }
     ]
