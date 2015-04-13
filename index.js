@@ -11,7 +11,8 @@ module.exports = {
         "no-named-define": require("./lib/rules/no-named-define"),
         "no-commonjs-wrapper": require("./lib/rules/no-commonjs-wrapper"),
         "no-commonjs-return": require("./lib/rules/no-commonjs-return"),
-        "no-commonjs-exports": require("./lib/rules/no-commonjs-exports")
+        "no-commonjs-exports": require("./lib/rules/no-commonjs-exports"),
+        "no-commonjs-module-exports": require("./lib/rules/no-commonjs-module-exports")
     },
     rulesConfig: {
 
@@ -27,6 +28,7 @@ module.exports = {
         "no-named-define": 0,
         "no-commonjs-wrapper": 0,
         "no-commonjs-return": 0,
-        "no-commonjs-exports": 0
+        "no-commonjs-exports": 0,
+        "no-commonjs-module-exports": 0
     }
 };
