@@ -27,8 +27,8 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-module-exports", {
         fixtures.FUNCTION_DEFINE,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
-        fixtures.AMD_NAMED_DEFINE,
-        fixtures.AMD_NAMED_EMPTY_DEFINE,
+        fixtures.NAMED_AMD_DEFINE,
+        fixtures.NAMED_AMD_EMPTY_DEFINE,
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.NON_WRAPPED_EXPORTS

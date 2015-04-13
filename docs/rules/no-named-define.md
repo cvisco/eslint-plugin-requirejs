@@ -7,13 +7,19 @@ This rule aims to prevent usage of named module definitions.
 The following patterns are considered warnings:
 
 ```js
-// Named module with dependencies
-define('path/to/baz', ['path/to/foo'], function (foo) {
+// Named Object Definition
+define('path/to/baz', {
+    a: 'foo',
+    b: 'bar'
+});
+
+// Named Function Defintion
+define('path/to/baz', function () {
     /* ... */
 });
 
-// Named module with no dependencies
-define('path/to/baz', [], function () {
+// Named AMD module
+define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
 ```

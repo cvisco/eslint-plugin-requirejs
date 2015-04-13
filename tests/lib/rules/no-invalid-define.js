@@ -30,8 +30,8 @@ eslintTester.addRuleTest("lib/rules/no-invalid-define", {
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
-        fixtures.AMD_NAMED_DEFINE,
-        fixtures.AMD_NAMED_EMPTY_DEFINE
+        fixtures.NAMED_AMD_DEFINE,
+        fixtures.NAMED_AMD_EMPTY_DEFINE
     ],
 
     invalid: [

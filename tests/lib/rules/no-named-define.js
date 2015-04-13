@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Named module form of `define` is not allowed",
+    type: "CallExpression"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-named-define", {
@@ -33,20 +38,11 @@ eslintTester.addRuleTest("lib/rules/no-named-define", {
     ],
 
     invalid: [
-        {
-            code: fixtures.AMD_NAMED_DEFINE,
-            errors: [{
-                message: "Named module form of `define` is not allowed",
-                type: "CallExpression"
-            }]
-        },
-        {
-            code: fixtures.AMD_NAMED_EMPTY_DEFINE,
-            errors: [{
-                message: "Named module form of `define` is not allowed",
-                type: "CallExpression"
-            }]
-        }
+        { code: fixtures.NAMED_OBJECT_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_FUNCTION_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_AMD_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_AMD_EMPTY_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_CJS_DEFINE, errors: [ERROR] }
     ]
 
 });

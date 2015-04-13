@@ -28,8 +28,8 @@ eslintTester.addRuleTest("lib/rules/no-amd-define", {
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
-        fixtures.AMD_NAMED_DEFINE,
-        fixtures.AMD_NAMED_EMPTY_DEFINE
+        fixtures.NAMED_AMD_DEFINE,
+        fixtures.NAMED_AMD_EMPTY_DEFINE
     ],
 
     invalid: [
