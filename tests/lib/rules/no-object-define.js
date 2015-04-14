@@ -18,6 +18,12 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Simple Name/Value Pairs form of `define` is not allowed",
+    type: "CallExpression"
+};
+
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-object-define", {
@@ -29,18 +35,15 @@ eslintTester.addRuleTest("lib/rules/no-object-define", {
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
+        fixtures.NAMED_FUNCTION_DEFINE,
         fixtures.NAMED_AMD_DEFINE,
-        fixtures.NAMED_AMD_EMPTY_DEFINE
+        fixtures.NAMED_AMD_EMPTY_DEFINE,
+        fixtures.NAMED_CJS_DEFINE
     ],
 
     invalid: [
-        {
-            code: fixtures.OBJECT_DEFINE,
-            errors: [{
-                message: "Simple Name/Value Pairs form of `define` is not allowed",
-                type: "CallExpression"
-            }]
-        }
+        { code: fixtures.OBJECT_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_OBJECT_DEFINE, errors: [ERROR] }
     ]
 
 });

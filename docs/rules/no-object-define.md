@@ -11,6 +11,11 @@ define({
     a: 'foo',
     b: 'bar'
 });
+
+define('path/to/baz', {
+    a: 'foo',
+    b: 'bar'
+});
 ```
 
 The following patterns are not warnings:
