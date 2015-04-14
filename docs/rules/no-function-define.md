@@ -2,12 +2,16 @@
 
 ## Rule Details
 
-This rule aims to prevent usage of simple function definitions.
+This rule aims to prevent usage of simple function definitions. Note that this rule does not flag use of the Simplified CommonJS Wrapper form of `define`. That is considered a special form of definition function and is handled by a separate rule.
 
 The following patterns are considered warnings:
 
 ```js
 define(function () {
+    /* ... */
+});
+
+define('path/to/baz', function () {
     /* ... */
 });
 ```
@@ -21,18 +25,8 @@ define({
     b: 'bar'
 });
 
-// Definition Function with No Dependencies
-define([], function () {
-    /* ... */
-});
-
-// Definition Function with Dependencies
+// Definition Function with Dependency Array
 define(['path/to/foo', 'path/to/bar'], function (foo, bar) {
-    /* ... */
-});
-
-// Named module
-define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
 
@@ -47,7 +41,7 @@ define(function (require) {
 
 ## When Not To Use It
 
-If you want to use simple definition functions with no dependency list, then it is safe to disable this rule.
+If you want to use simple definition functions with no dependency array, then it is safe to disable this rule.
 
 ## Further Reading
 
