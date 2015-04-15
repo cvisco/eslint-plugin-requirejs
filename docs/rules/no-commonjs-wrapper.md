@@ -31,6 +31,16 @@ define(function (require, exports, module) {
         doSomething: function () { /* ... */ };
     }
 });
+
+// Named CommonJS module
+define('path/to/baz', function (require, exports, module) {
+    var foo = require('path/to/foo'),
+        bar = require('path/to/bar');
+
+    module.exports = {
+        doSomething: function () { /* ... */ };
+    }
+});
 ```
 
 The following patterns are not warnings:
@@ -42,18 +52,13 @@ define({
     b: 'bar'
 });
 
-// Definition Function
+// Simple Definition Function
 define(function () {
     /* ... */
 });
 
-// Definition Function with Dependencies
+// Definition Function with Dependency Array
 define(['path/to/foo', 'path/to/bar'], function (foo, bar) {
-    /* ... */
-});
-
-// Named Module with Dependencies
-define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
 ```
