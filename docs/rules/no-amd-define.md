@@ -11,12 +11,18 @@ This rule aims to prevent usage of AMD-style module definitions.
 The following patterns are considered warnings:
 
 ```js
+// Module Definition with Dependency Array
 define(['path/to/foo', 'path/to/bar'], function (foo, bar) {
     /* ... */
 });
 
-
+// Module Definition with Empty Dependency Array
 define([], function () {
+    /* ... */
+});
+
+// Named Module Definition with Dependency Array
+define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
 ```
@@ -30,13 +36,8 @@ define({
     b: 'bar'
 });
 
-// Definition Function
+// Simple Definition Function
 define(function () {
-    /* ... */
-});
-
-// Named Module with Dependencies
-define('path/to/baz', ['path/to/foo'], function (foo) {
     /* ... */
 });
 

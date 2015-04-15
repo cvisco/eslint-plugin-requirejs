@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "AMD form of `define` is not allowed.",
+    type: "CallExpression"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-amd-define", {
@@ -28,25 +33,16 @@ eslintTester.addRuleTest("lib/rules/no-amd-define", {
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
-        fixtures.NAMED_AMD_DEFINE,
-        fixtures.NAMED_AMD_EMPTY_DEFINE
+        fixtures.NAMED_OBJECT_DEFINE,
+        fixtures.NAMED_FUNCTION_DEFINE,
+        fixtures.NAMED_CJS_DEFINE
     ],
 
     invalid: [
-        {
-            code: fixtures.AMD_DEFINE,
-            errors: [{
-                message: "AMD form of `define` is not allowed",
-                type: "CallExpression"
-            }]
-        },
-        {
-            code: fixtures.AMD_EMPTY_DEFINE,
-            errors: [{
-                message: "AMD form of `define` is not allowed",
-                type: "CallExpression"
-            }]
-        }
+        { code: fixtures.AMD_DEFINE, errors: [ERROR] },
+        { code: fixtures.AMD_EMPTY_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_AMD_DEFINE, errors: [ERROR] },
+        { code: fixtures.NAMED_AMD_EMPTY_DEFINE, errors: [ERROR] }
     ]
 
 });
