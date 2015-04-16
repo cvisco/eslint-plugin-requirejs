@@ -1,3 +1,12 @@
+v0.2.1 - April 16, 2015
+
+Fix: Permit named modules in no-invalid-define rule (fixes #17)
+Fix: Flag named AMD module definitions as warning in no-amd-define (fixes #16)
+Fix: Flag named CommonJS definitions as warning in no-commonjs-wrapper (fixes #15)
+Fix: Flag named function definitions as warning in no-function-define (fixes #14)
+Fix: Flag named object modules as warning in no-object-define (fixes #13)
+Fix: Allow other forms of named modules in no-named-define (fixes #12)
+
 v0.2.0 - April 13, 2015
 
 Docs: Link to RequireJS home page from README
