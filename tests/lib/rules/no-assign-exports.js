@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Invalid assignment to `exports`.",
+    type: "AssignmentExpression"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-assign-exports", {
@@ -29,13 +34,7 @@ eslintTester.addRuleTest("lib/rules/no-assign-exports", {
     ],
 
     invalid: [
-        {
-            code: fixtures.CJS_WITH_INVALID_EXPORTS,
-            errors: [{
-                message: "Invalid assignment to `exports`.",
-                type: "AssignmentExpression"
-            }]
-        }
+        { code: fixtures.CJS_WITH_INVALID_EXPORTS, errors: [ERROR] }
     ]
 
 });

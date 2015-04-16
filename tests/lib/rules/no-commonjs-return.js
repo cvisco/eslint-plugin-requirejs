@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Unexpected `return` in module definition.",
+    type: "ReturnStatement"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-commonjs-return", {
@@ -27,8 +32,11 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-return", {
         fixtures.FUNCTION_DEFINE,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
+        fixtures.NAMED_OBJECT_DEFINE,
+        fixtures.NAMED_FUNCTION_DEFINE,
         fixtures.NAMED_AMD_DEFINE,
         fixtures.NAMED_AMD_EMPTY_DEFINE,
+        fixtures.NAMED_CJS_DEFINE,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.CJS_WITH_FUNC_EXPR
@@ -37,10 +45,7 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-return", {
     invalid: [
         {
             code: fixtures.CJS_WITH_RETURN,
-            errors: [{
-                message: "Unexpected `return` in module definition.",
-                type: "ReturnStatement"
-            }]
+            errors: [ERROR]
         }
     ]
 

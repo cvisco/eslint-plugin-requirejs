@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Multiple `define` calls in a single file are not permitted",
+    type: "Program"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-multiple-define", {
@@ -35,13 +40,7 @@ eslintTester.addRuleTest("lib/rules/no-multiple-define", {
     ],
 
     invalid: [
-        {
-            code: fixtures.MULTIPLE_DEFINE,
-            errors: [{
-                message: "Multiple `define` calls in a single file are not permitted",
-                type: "Program"
-            }]
-        }
+        { code: fixtures.MULTIPLE_DEFINE, errors: [ERROR] }
     ]
 
 });

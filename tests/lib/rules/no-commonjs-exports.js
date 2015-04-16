@@ -18,6 +18,11 @@ var eslint = require("eslint"),
 // Tests
 //------------------------------------------------------------------------------
 
+var ERROR = {
+    message: "Unexpected use of `exports` in module definition.",
+    type: "AssignmentExpression"
+};
+
 var eslintTester = new ESLintTester(eslint.linter);
 
 eslintTester.addRuleTest("lib/rules/no-commonjs-exports", {
@@ -27,8 +32,11 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-exports", {
         fixtures.FUNCTION_DEFINE,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
+        fixtures.NAMED_OBJECT_DEFINE,
+        fixtures.NAMED_FUNCTION_DEFINE,
         fixtures.NAMED_AMD_DEFINE,
         fixtures.NAMED_AMD_EMPTY_DEFINE,
+        fixtures.NAMED_CJS_DEFINE,
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.CJS_WITH_FUNC_EXPR,
@@ -36,13 +44,7 @@ eslintTester.addRuleTest("lib/rules/no-commonjs-exports", {
     ],
 
     invalid: [
-        {
-            code: fixtures.CJS_WITH_EXPORTS,
-            errors: [{
-                message: "Unexpected use of `exports` in module definition.",
-                type: "AssignmentExpression"
-            }]
-        }
+        { code: fixtures.CJS_WITH_EXPORTS, errors: [ERROR] }
     ]
 
 });
