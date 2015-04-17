@@ -7,6 +7,8 @@
 
 Enforce code conventions for [RequireJS](http://requirejs.org) modules with [ESLint](https://www.github.com/eslint/eslint).
 
+This plugin is under active development, and is updated frequently. Take a look at the [CHANGELOG](CHANGELOG.md) to see what's recently been added or fixed.
+
 ## Installation
 
 Install [ESLint](https://www.github.com/eslint/eslint) either locally or globally, and then install the plugin (see below). It is important to note that a global instance of ESLint can only use plugins that are also installed globally. A local instance of ESLint, however, can make use of both local and global ESLint plugins.
