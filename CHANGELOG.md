@@ -1,3 +1,7 @@
+v0.2.3 - April 19, 2015
+
+* Fix: Prevent rules from warning on non-define calls (fixes #23)
+
 v0.2.2 - April 16, 2015
 
 * Update: Remove unused helpers lib
