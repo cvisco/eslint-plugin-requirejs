@@ -12,7 +12,8 @@ module.exports = {
         "no-commonjs-wrapper": require("./lib/rules/no-commonjs-wrapper"),
         "no-commonjs-return": require("./lib/rules/no-commonjs-return"),
         "no-commonjs-exports": require("./lib/rules/no-commonjs-exports"),
-        "no-commonjs-module-exports": require("./lib/rules/no-commonjs-module-exports")
+        "no-commonjs-module-exports": require("./lib/rules/no-commonjs-module-exports"),
+        "no-dynamic-require": require("./lib/rules/no-dynamic-require")
     },
     rulesConfig: {
 
@@ -29,6 +30,7 @@ module.exports = {
         "no-commonjs-wrapper": 0,
         "no-commonjs-return": 0,
         "no-commonjs-exports": 0,
-        "no-commonjs-module-exports": 0
+        "no-commonjs-module-exports": 0,
+        "no-dynamic-require": 0
     }
 };
