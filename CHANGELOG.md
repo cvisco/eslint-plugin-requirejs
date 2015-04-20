@@ -1,14 +1,16 @@
-v0.2.3 - April 19, 2015
+# CHANGELOG
+
+### v0.2.3 - April 19, 2015
 
 * Fix: Prevent rules from warning on non-define calls (fixes #23)
 
-v0.2.2 - April 16, 2015
+### v0.2.2 - April 16, 2015
 
 * Update: Remove unused helpers lib
 * Docs: Clarify installation instructions
 * Docs: Add link to CHANGELOG from README
 
-v0.2.1 - April 16, 2015
+### v0.2.1 - April 16, 2015
 
 * Fix: Permit named modules in no-invalid-define rule (fixes #17)
 * Fix: Flag named AMD module definitions as warning in no-amd-define (fixes #16)
@@ -17,7 +19,7 @@ v0.2.1 - April 16, 2015
 * Fix: Flag named object modules as warning in no-object-define (fixes #13)
 * Fix: Allow other forms of named modules in no-named-define (fixes #12)
 
-v0.2.0 - April 13, 2015
+### v0.2.0 - April 13, 2015
 
 * Docs: Link to RequireJS home page from README
 * Docs: Sort rules in README by type (fixes #9)
@@ -26,14 +28,14 @@ v0.2.0 - April 13, 2015
 * New: Implement no-commonjs-return rule (fixes #4)
 * New: Implement no-assign-exports rule (fixes #6)
 
-v0.1.2 - April 3, 2015
+### v0.1.2 - April 3, 2015
 
 * Fix: Allow plugin to work with wider range of eslint versions (fixes #8)
 
-v0.1.1 - April 2, 2015
+### v0.1.1 - April 2, 2015
 
 * Docs: Cleanup README
 
-v0.1.0 - March 30, 2015
+### v0.1.0 - March 30, 2015
 
 * Initial Release

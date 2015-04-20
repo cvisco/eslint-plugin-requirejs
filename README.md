@@ -13,12 +13,12 @@ This plugin is under active development, and is updated frequently. Take a look 
 
 Install [ESLint](https://www.github.com/eslint/eslint) either locally or globally, and then install the plugin (see below). It is important to note that a global instance of ESLint can only use plugins that are also installed globally. A local instance of ESLint, however, can make use of both local and global ESLint plugins.
 
-#### Global Installation
+### Global Installation
 
     $ npm install -g eslint
     $ npm install -g eslint-plugin-requirejs
 
-#### Local Installation
+### Local Installation
 
     $ npm install --save-dev eslint
     $ npm install --save-dev eslint-plugin-requirejs
@@ -51,13 +51,13 @@ Enable the rules that you would like to use, for example:
 
 ## List of supported rules
 
-#### Possible Errors
+### Possible Errors
 
 * [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid module definitions
 * [no-multiple-define](docs/rules/no-multiple-define.md): Disallow multiple module definitions in one file
 * [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
 
-#### Stylistic Choices
+### Stylistic Choices
 
 * [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define` (off by default)
 * [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define` (off by default)
@@ -70,7 +70,7 @@ Enable the rules that you would like to use, for example:
 * [no-dynamic-require](docs/rules/no-dynamic-require.md): Disallow use of dynamically generated paths in a `require` call (off by default)
 * [no-conditional-require](docs/rules/no-conditional-require.md): Disallow use of conditional `require` calls (off by default)
 
-#### Don't see the rule you're looking for?
+### Don't see the rule you're looking for?
 
 Take a look at what's in progress for the next [milestone](https://github.com/cvisco/eslint-plugin-requirejs/milestones), or suggest a new rule by filing an [issue](https://github.com/cvisco/eslint-plugin-requirejs/issues).
 
