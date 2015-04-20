@@ -32,12 +32,15 @@ eslintTester.addRuleTest("lib/rules/no-dynamic-require", {
         fixtures.AMD_REQUIRE,
         fixtures.AMD_EMPTY_REQUIRE,
         fixtures.AMD_REQUIRE_WITH_ERRBACK,
+        fixtures.NESTED_AMD_REQUIRE,
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.NAMED_CJS_DEFINE,
         fixtures.CONDITIONAL_AMD_REQUIRE,
-        fixtures.CONDITIONAL_CJS_REQUIRE
+        fixtures.CONDITIONAL_CJS_REQUIRE,
+        fixtures.CONDITIONAL_TERNARY_CJS_REQUIRE,
+        fixtures.CONDITIONAL_NESTED_AMD_REQUIRE
     ],
 
     invalid: [
