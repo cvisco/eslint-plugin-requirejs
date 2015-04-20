@@ -68,6 +68,7 @@ Enable the rules that you would like to use, for example:
 * [no-commonjs-exports](docs/rules/no-commonjs-exports.md): Disallow use of `exports` in a module definition when using Simplified CommonJS Wrapper (off by default)
 * [no-commonjs-module-exports](docs/rules/no-commonjs-module-exports.md): Disallow use of `module.exports` in a module definition when using Simplified CommonJS Wrapper (off by default)
 * [no-dynamic-require](docs/rules/no-dynamic-require.md): Disallow use of dynamically generated paths in a `require` call (off by default)
+* [no-conditional-require](docs/rules/no-conditional-require.md): Disallow use of conditional `require` calls (off by default)
 
 #### Don't see the rule you're looking for?
 

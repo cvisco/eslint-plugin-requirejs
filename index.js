@@ -13,7 +13,8 @@ module.exports = {
         "no-commonjs-return": require("./lib/rules/no-commonjs-return"),
         "no-commonjs-exports": require("./lib/rules/no-commonjs-exports"),
         "no-commonjs-module-exports": require("./lib/rules/no-commonjs-module-exports"),
-        "no-dynamic-require": require("./lib/rules/no-dynamic-require")
+        "no-dynamic-require": require("./lib/rules/no-dynamic-require"),
+        "no-conditional-require": require("./lib/rules/no-conditional-require")
     },
     rulesConfig: {
 
@@ -31,6 +32,7 @@ module.exports = {
         "no-commonjs-return": 0,
         "no-commonjs-exports": 0,
         "no-commonjs-module-exports": 0,
-        "no-dynamic-require": 0
+        "no-dynamic-require": 0,
+        "no-conditional-require": 0
     }
 };
