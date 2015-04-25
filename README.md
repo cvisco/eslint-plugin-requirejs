@@ -70,6 +70,7 @@ Enable the rules that you would like to use, for example:
 * [no-dynamic-require](docs/rules/no-dynamic-require.md): Disallow use of dynamically generated paths in a `require` call (off by default)
 * [no-conditional-require](docs/rules/no-conditional-require.md): Disallow use of conditional `require` calls (off by default)
 * [no-assign-require](docs/rules/no-assign-require.md): Disallow assignment to `require` or `window.require` (off by default)
+* [no-require-tourl](docs/rules/no-require-tourl.md): Disallow use of `require.toUrl` and `require.nameToUrl` (off by default)
 
 ### Don't see the rule you're looking for?
 
