@@ -42,7 +42,21 @@ eslintTester.addRuleTest("lib/rules/no-require-tourl", {
             }]
         },
         {
+            code: fixtures.REQUIREJS_TO_URL,
+            errors: [{
+                message: util.format(MESSAGE, "toUrl"),
+                type: "CallExpression"
+            }]
+        },
+        {
             code: fixtures.REQUIRE_NAME_TO_URL,
+            errors: [{
+                message: util.format(MESSAGE, "nameToUrl"),
+                type: "CallExpression"
+            }]
+        },
+        {
+            code: fixtures.REQUIREJS_NAME_TO_URL,
             errors: [{
                 message: util.format(MESSAGE, "nameToUrl"),
                 type: "CallExpression"

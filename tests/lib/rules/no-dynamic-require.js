@@ -30,8 +30,13 @@ eslintTester.addRuleTest("lib/rules/no-dynamic-require", {
 
     valid: [
         fixtures.AMD_REQUIRE,
+        fixtures.AMD_REQUIRE_RELATIVE,
         fixtures.AMD_EMPTY_REQUIRE,
         fixtures.AMD_REQUIRE_WITH_ERRBACK,
+        fixtures.AMD_REQUIREJS,
+        fixtures.AMD_REQUIREJS_RELATIVE,
+        fixtures.AMD_EMPTY_REQUIREJS,
+        fixtures.AMD_REQUIREJS_WITH_ERRBACK,
         fixtures.NESTED_AMD_REQUIRE,
         fixtures.CJS_WITH_RETURN,
         fixtures.CJS_WITH_EXPORTS,
@@ -40,7 +45,11 @@ eslintTester.addRuleTest("lib/rules/no-dynamic-require", {
         fixtures.CONDITIONAL_AMD_REQUIRE,
         fixtures.CONDITIONAL_CJS_REQUIRE,
         fixtures.CONDITIONAL_TERNARY_CJS_REQUIRE,
-        fixtures.CONDITIONAL_NESTED_AMD_REQUIRE
+        fixtures.CONDITIONAL_NESTED_AMD_REQUIRE,
+        fixtures.CONDITIONAL_AMD_REQUIREJS,
+        fixtures.CONDITIONAL_CJS_REQUIREJS,
+        fixtures.CONDITIONAL_TERNARY_CJS_REQUIREJS,
+        fixtures.CONDITIONAL_NESTED_AMD_REQUIREJS
     ],
 
     invalid: [
@@ -49,7 +58,13 @@ eslintTester.addRuleTest("lib/rules/no-dynamic-require", {
         { code: fixtures.DYNAMIC_VARIABLE_AMD_REQUIRE, errors: [ERROR] },
         { code: fixtures.DYNAMIC_TERNARY_CJS_REQUIRE, errors: [ERROR] },
         { code: fixtures.DYNAMIC_VARIABLE_CJS_REQUIRE, errors: [ERROR] },
-        { code: fixtures.DYNAMIC_AMD_REQUIRE_WITH_ERRBACK, errors: [ERROR] }
+        { code: fixtures.DYNAMIC_AMD_REQUIRE_WITH_ERRBACK, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_MIXED_AMD_REQUIREJS, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_TERNARY_AMD_REQUIREJS, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_VARIABLE_AMD_REQUIREJS, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_TERNARY_CJS_REQUIREJS, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_VARIABLE_CJS_REQUIREJS, errors: [ERROR] },
+        { code: fixtures.DYNAMIC_AMD_REQUIREJS_WITH_ERRBACK, errors: [ERROR] }
     ]
 
 });
