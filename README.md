@@ -2,6 +2,7 @@
 [![Maintenance Status][status-image]][status-url]
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
+[![Package Quality][packagequality-image]][packagequality-url]
 
 # eslint-plugin-requirejs
 
@@ -98,4 +99,7 @@ eslint-plugin-requirejs is licensed under the [MIT License](http://www.opensourc
 
 [coveralls-url]: https://coveralls.io/r/cvisco/eslint-plugin-requirejs?branch=master
 [coveralls-image]: https://img.shields.io/coveralls/cvisco/eslint-plugin-requirejs/master.svg?style=flat-square
+
+[packagequality-url]: http://packagequality.com/#?package=eslint-plugin-requirejs
+[packagequality-image]: http://npm.packagequality.com/shield/eslint-plugin-requirejs.svg?style=flat-square
 
