@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### v0.3.0 - April 27, 2015
+
+* New: Implement no-dynamic-require rule (fixes #18)
+* New: Implement no-conditional-require rule (fixes #22)
+* New: Implement no-require-tourl rule (fixes #21)
+* New: Implement no-assign-require rule (fixes #20)
+* Fix: Verify callee is an Identifier when testing CallExpression name (fixes #25)
+
 ### v0.2.3 - April 19, 2015
 
 * Fix: Prevent rules from warning on non-define calls (fixes #23)
