@@ -11,10 +11,12 @@
   },
   "keywords": [
     "eslint",
+    "plugin",
     "eslintplugin",
+    "eslint-plugin",
     "require",
     "requirejs",
-    "AMD",
+    "amd",
     "lint"
   ],
   "license": "MIT",
