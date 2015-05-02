@@ -1,6 +1,5 @@
 define('path/to/c', function (require, exports, module) {
-    var a = require('path/to/a'),
-        b = require('path/to/b');
+    var a = require('path/to/a.js');
 
     module.exports = {
         doSomething: function () {

@@ -5,6 +5,7 @@ module.exports = {
         "no-invalid-define": require("./lib/rules/no-invalid-define"),
         "no-multiple-define": require("./lib/rules/no-multiple-define"),
         "no-assign-exports": require("./lib/rules/no-assign-exports"),
+        "no-js-extension": require("./lib/rules/no-js-extension"),
         "no-object-define": require("./lib/rules/no-object-define"),
         "no-function-define": require("./lib/rules/no-function-define"),
         "no-amd-define": require("./lib/rules/no-amd-define"),
@@ -24,6 +25,7 @@ module.exports = {
         "no-invalid-define": 2,
         "no-multiple-define": 2,
         "no-assign-exports": 2,
+        "no-js-extension": 2,
 
         // Stylistic Choices
         "no-object-define": 0,

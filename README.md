@@ -57,6 +57,7 @@ Enable the rules that you would like to use, for example:
 * [no-invalid-define](docs/rules/no-invalid-define.md): Disallow invalid module definitions
 * [no-multiple-define](docs/rules/no-multiple-define.md): Disallow multiple module definitions in one file
 * [no-assign-exports](docs/rules/no-assign-exports.md): Disallow assignment to `exports` when using Simplified CommonJS Wrapper
+* [no-js-extension](docs/rules/no-js-extension.md): Disallow `.js` extension in dependency paths
 
 ### Stylistic Choices
 
