@@ -4,5 +4,5 @@ node_js:
   - "0.11"
   - "0.10"
   - iojs
-script: "npm run-script test-coverage"
+script: "npm run-script test"
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
