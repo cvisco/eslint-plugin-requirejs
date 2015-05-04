@@ -3,6 +3,7 @@
 module.exports = {
     rules: {
         "no-invalid-define": require("./lib/rules/no-invalid-define"),
+        "no-invalid-require": require("./lib/rules/no-invalid-require"),
         "no-multiple-define": require("./lib/rules/no-multiple-define"),
         "no-assign-exports": require("./lib/rules/no-assign-exports"),
         "no-js-extension": require("./lib/rules/no-js-extension"),
@@ -23,6 +24,7 @@ module.exports = {
 
         // Potential Errors
         "no-invalid-define": 2,
+        "no-invalid-require": 2,
         "no-multiple-define": 2,
         "no-assign-exports": 2,
         "no-js-extension": 2,
