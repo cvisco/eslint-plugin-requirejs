@@ -67,7 +67,9 @@ eslintTester.addRuleTest("lib/rules/no-invalid-require", {
         { code: fixtures.BAD_REQUIRE_OBJECT, errors: [ERROR] },
         { code: fixtures.BAD_REQUIRE_TOO_MANY_ARGS, errors: [ERROR] },
         { code: fixtures.BAD_REQUIRE_STRING_DEP, errors: [ERROR] },
-        { code: fixtures.BAD_REQUIREJS_STRING_DEP, errors: [ERROR] }
+        { code: fixtures.BAD_REQUIREJS_STRING_DEP, errors: [ERROR] },
+        { code: fixtures.BAD_REQUIRE_INVALID_CALLBACK, errors: [ERROR] },
+        { code: fixtures.BAD_REQUIRE_INVALID_ERRBACK, errors: [ERROR] }
     ]
 
 });
