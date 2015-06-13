@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### v0.4.0 - June 13, 2015
+
+* New: Implement no-invalid-require rule (fixes #19)
+* New: Implement no-js-extension rule (fixes #29)
+* Fix: Warn on invalid callback in no-invalid-require rule (fixes #30)
+* Update: Cleanup code in `util#isValidRequire`
+* Build: Execute coverage as part of `npm test`
+
 ### v0.3.0 - April 27, 2015
 
 * New: Implement no-dynamic-require rule (fixes #18)
