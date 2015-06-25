@@ -2,7 +2,7 @@ env:
     node: true
 
 rules:
-    indent: 4
+    indent: [2, 4]
     quotes: [2, "double", "avoid-escape"]
     brace-style: [2, "1tbs"]
     comma-style: [2, "last"]
