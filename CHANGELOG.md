@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### v0.4.1 - June 25, 2015
+
+* Fix: no-invalid-define rule affecting other rules (Andrew Sutton)
+
 ### v0.4.0 - June 13, 2015
 
 * New: Implement no-invalid-require rule (fixes #19)
