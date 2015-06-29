@@ -43,7 +43,27 @@ eslintTester.addRuleTest("lib/rules/no-js-extension", {
         fixtures.CJS_WITH_RETURN,
         fixtures.NAMED_AMD_DEFINE,
         fixtures.NAMED_AMD_EMPTY_DEFINE,
-        fixtures.NAMED_CJS_DEFINE
+        fixtures.NAMED_CJS_DEFINE,
+        fixtures.DYNAMIC_AMD_REQUIRE_WITH_ERRBACK,
+        fixtures.DYNAMIC_AMD_REQUIREJS_WITH_ERRBACK,
+        fixtures.DYNAMIC_MIXED_AMD_REQUIRE,
+        fixtures.DYNAMIC_MIXED_AMD_REQUIREJS,
+        fixtures.DYNAMIC_TERNARY_AMD_REQUIRE,
+        fixtures.DYNAMIC_TERNARY_AMD_REQUIREJS,
+        fixtures.DYNAMIC_TERNARY_CJS_REQUIRE,
+        fixtures.DYNAMIC_TERNARY_CJS_REQUIREJS,
+        fixtures.DYNAMIC_VARIABLE_AMD_REQUIRE,
+        fixtures.DYNAMIC_VARIABLE_AMD_REQUIREJS,
+        fixtures.DYNAMIC_VARIABLE_CJS_REQUIRE,
+        fixtures.DYNAMIC_VARIABLE_CJS_REQUIREJS,
+        fixtures.CONDITIONAL_AMD_REQUIRE,
+        fixtures.CONDITIONAL_AMD_REQUIREJS,
+        fixtures.CONDITIONAL_CJS_REQUIRE,
+        fixtures.CONDITIONAL_CJS_REQUIREJS,
+        fixtures.CONDITIONAL_NESTED_AMD_REQUIRE,
+        fixtures.CONDITIONAL_NESTED_AMD_REQUIREJS,
+        fixtures.CONDITIONAL_TERNARY_CJS_REQUIRE,
+        fixtures.CONDITIONAL_TERNARY_CJS_REQUIREJS
     ],
 
     invalid: [
