@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### v0.4.2 - June 29, 2015
+
+* Fix: only include string literals in array returned from util.getDependencyNodes (fixes #32) (Casey Visco)
+
 ### v0.4.1 - June 25, 2015
 
 * Fix: no-invalid-define rule affecting other rules (Andrew Sutton)
