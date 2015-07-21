@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### v0.5.1 - July 20, 2015
+
+* Fix: Compare basename against ignore list in enforce-define (fixes #33) (Casey Visco)
+
 ### v0.5.0 - July 20, 2015
 
 * New: Implement enforce-define rule (fixes #28) (Casey Visco)
