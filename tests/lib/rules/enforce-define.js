@@ -28,6 +28,8 @@ var eslintTester = new ESLintTester(eslint.linter);
 eslintTester.addRuleTest("lib/rules/enforce-define", {
 
     valid: [
+
+        // Any sort of define should work
         fixtures.MULTIPLE_DEFINE,
         fixtures.OBJECT_DEFINE,
         fixtures.FUNCTION_DEFINE,
@@ -47,6 +49,8 @@ eslintTester.addRuleTest("lib/rules/enforce-define", {
         fixtures.CJS_WITH_JS_EXT,
         fixtures.NAMED_AMD_DEFINE_WITH_JS_EXT,
         fixtures.NAMED_CJS_DEFINE_WITH_JS_EXT,
+
+        // All of the invalid cases should work if we ignore the file
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "main.js",
@@ -67,24 +71,23 @@ eslintTester.addRuleTest("lib/rules/enforce-define", {
             filename: "main.js",
             args: [ 1, "main.js" ]
         },
+
+        // Ignore should work with full path
+        {
+            code: fixtures.UNWRAPPED_FILE,
+            filename: "path/to/main.js",
+            args: [ 1, [ "main.js" ] ]
+        },
+
+        // Ignore should support multiple filenames
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "main.js",
             args: [ 1, [ "main.js", "index.js" ] ]
         },
         {
-            code: fixtures.NON_WRAPPED_EXPORTS,
-            filename: "main.js",
-            args: [ 1, [ "main.js", "index.js" ] ]
-        },
-        {
-            code: fixtures.AMD_REQUIRE,
-            filename: "main.js",
-            args: [ 1, [ "main.js", "index.js" ] ]
-        },
-        {
-            code: fixtures.AMD_REQUIREJS,
-            filename: "main.js",
+            code: fixtures.UNWRAPPED_FILE,
+            filename: "index.js",
             args: [ 1, [ "main.js", "index.js" ] ]
         }
     ],
@@ -113,45 +116,21 @@ eslintTester.addRuleTest("lib/rules/enforce-define", {
             errors: [ERROR]
         },
         {
-            code: fixtures.NON_WRAPPED_EXPORTS,
-            filename: "foo.js",
-            args: [ 1, "main.js" ],
-            errors: [ERROR]
-        },
-        {
-            code: fixtures.AMD_REQUIRE,
-            filename: "foo.js",
-            args: [ 1, "main.js" ],
-            errors: [ERROR]
-        },
-        {
-            code: fixtures.AMD_REQUIREJS,
-            filename: "foo.js",
-            args: [ 1, "main.js" ],
-            errors: [ERROR]
-        },
-        {
             code: fixtures.UNWRAPPED_FILE,
             filename: "foo.js",
             args: [ 1, [ "main.js", "index.js" ] ],
             errors: [ERROR]
         },
         {
-            code: fixtures.NON_WRAPPED_EXPORTS,
-            filename: "foo.js",
-            args: [ 1, [ "main.js", "index.js" ] ],
+            code: fixtures.UNWRAPPED_FILE,
+            filename: "path/to/foo.js",
+            args: [ 1, "main.js" ],
             errors: [ERROR]
         },
         {
-            code: fixtures.AMD_REQUIRE,
-            filename: "foo.js",
-            args: [ 1, [ "main.js", "index.js" ] ],
-            errors: [ERROR]
-        },
-        {
-            code: fixtures.AMD_REQUIREJS,
-            filename: "foo.js",
-            args: [ 1, [ "main.js", "index.js" ] ],
+            code: fixtures.UNWRAPPED_FILE,
+            filename: "path/to/main.js/foo.js",
+            args: [ 1, "main.js" ],
             errors: [ERROR]
         }
     ]
