@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### v0.5.0 - July 20, 2015
+
+* New: Implement enforce-define rule (fixes #28) (Casey Visco)
+* Build: Upgrade eslint and eslint-tester versions (Casey Visco)
+
 ### v0.4.2 - June 29, 2015
 
 * Fix: only include string literals in array returned from util.getDependencyNodes (fixes #32) (Casey Visco)
