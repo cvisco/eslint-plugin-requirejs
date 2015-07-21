@@ -18,7 +18,8 @@ module.exports = {
         "no-dynamic-require": require("./lib/rules/no-dynamic-require"),
         "no-conditional-require": require("./lib/rules/no-conditional-require"),
         "no-assign-require": require("./lib/rules/no-assign-require"),
-        "no-require-tourl": require("./lib/rules/no-require-tourl")
+        "no-require-tourl": require("./lib/rules/no-require-tourl"),
+        "enforce-define": require("./lib/rules/enforce-define")
     },
     rulesConfig: {
 
@@ -41,6 +42,7 @@ module.exports = {
         "no-dynamic-require": 0,
         "no-conditional-require": 0,
         "no-assign-require": 0,
-        "no-require-tourl": 0
+        "no-require-tourl": 0,
+        "enforce-deifne": 0
     }
 };
