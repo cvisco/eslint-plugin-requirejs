@@ -9,10 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
-
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-assign-require");
 
 //------------------------------------------------------------------------------
 // Tests
@@ -20,9 +19,9 @@ var eslint = require("eslint"),
 
 var MESSAGE = "Invalid assignment to `require`.";
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-assign-require", {
+ruleTester.run("no-assign-require", rule, {
 
     valid: [
         fixtures.ASSIGN_TO_FOO_REQUIRE

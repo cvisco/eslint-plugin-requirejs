@@ -9,9 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-commonjs-exports");
 
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ var ERROR = {
     type: "AssignmentExpression"
 };
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-commonjs-exports", {
+ruleTester.run("no-commonjs-exports", rule, {
 
     valid: [
         fixtures.OBJECT_DEFINE,

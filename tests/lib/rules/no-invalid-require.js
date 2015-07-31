@@ -9,9 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-invalid-require");
 
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ var ERROR = {
     type: "CallExpression"
 };
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-invalid-require", {
+ruleTester.run("no-invalid-require", rule, {
 
     valid: [
         fixtures.AMD_REQUIRE,

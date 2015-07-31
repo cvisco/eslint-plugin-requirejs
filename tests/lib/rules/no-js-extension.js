@@ -9,9 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-js-extension");
 
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ var ERROR = {
     type: "Literal"
 };
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-js-extension", {
+ruleTester.run("no-js-extension", rule, {
 
     valid: [
         fixtures.AMD_DEFINE,

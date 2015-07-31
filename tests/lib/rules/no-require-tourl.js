@@ -9,10 +9,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var util = require("util"),
-    eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    util = require("util"),
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-require-tourl");
 
 
 //------------------------------------------------------------------------------
@@ -21,9 +21,9 @@ var util = require("util"),
 
 var MESSAGE = "Use of `require.%s` is not allowed.";
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-require-tourl", {
+ruleTester.run("no-require-tourl", rule, {
 
     valid: [
         fixtures.AMD_REQUIRE_RELATIVE,

@@ -9,9 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/no-function-define");
 
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ var ERROR = {
     type: "CallExpression"
 };
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/no-function-define", {
+ruleTester.run("no-function-define", rule, {
 
     valid: [
         fixtures.OBJECT_DEFINE,

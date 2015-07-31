@@ -9,9 +9,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var eslint = require("eslint"),
-    ESLintTester = require("eslint-tester"),
-    fixtures = require("../../fixtures");
+var RuleTester = require("eslint").RuleTester,
+    fixtures = require("../../fixtures"),
+    rule = require("../../../lib/rules/enforce-define");
 
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ var ERROR = {
     type: "Program"
 };
 
-var eslintTester = new ESLintTester(eslint.linter);
+var ruleTester = new RuleTester();
 
-eslintTester.addRuleTest("lib/rules/enforce-define", {
+ruleTester.run("enforce-define", rule, {
 
     valid: [
 
@@ -54,41 +54,41 @@ eslintTester.addRuleTest("lib/rules/enforce-define", {
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "main.js",
-            args: [ 1, "main.js" ]
+            options: [ "main.js" ]
         },
         {
             code: fixtures.NON_WRAPPED_EXPORTS,
             filename: "main.js",
-            args: [ 1, "main.js" ]
+            options: [ "main.js" ]
         },
         {
             code: fixtures.AMD_REQUIRE,
             filename: "main.js",
-            args: [ 1, "main.js" ]
+            options: [ "main.js" ]
         },
         {
             code: fixtures.AMD_REQUIREJS,
             filename: "main.js",
-            args: [ 1, "main.js" ]
+            options: [ "main.js" ]
         },
 
         // Ignore should work with full path
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "path/to/main.js",
-            args: [ 1, [ "main.js" ] ]
+            options: [ [ "main.js" ] ]
         },
 
         // Ignore should support multiple filenames
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "main.js",
-            args: [ 1, [ "main.js", "index.js" ] ]
+            options: [ [ "main.js", "index.js" ] ]
         },
         {
             code: fixtures.UNWRAPPED_FILE,
             filename: "index.js",
-            args: [ 1, [ "main.js", "index.js" ] ]
+            options: [ [ "main.js", "index.js" ] ]
         }
     ],
 
