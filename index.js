@@ -43,6 +43,6 @@ module.exports = {
         "no-conditional-require": 0,
         "no-assign-require": 0,
         "no-require-tourl": 0,
-        "enforce-deifne": 0
+        "enforce-define": 0
     }
 };
