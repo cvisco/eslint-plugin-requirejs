@@ -39,7 +39,8 @@ ruleTester.run("no-commonjs-return", rule, {
         fixtures.NAMED_CJS_DEFINE,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
-        fixtures.CJS_WITH_FUNC_EXPR
+        fixtures.CJS_WITH_FUNC_EXPR,
+        fixtures.CJS_WITH_NESTED_RETURNS
     ],
 
     invalid: [
