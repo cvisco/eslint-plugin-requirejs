@@ -69,7 +69,7 @@ rules:
     no-underscore-dangle: 2
     no-unused-expressions: 2
     no-unused-vars: [2, {vars: "all", args: "after-used"}]
-    no-use-before-define: 2
+    no-use-before-define: [2, "nofunc"]
     no-with: 2
     quotes: [2, "double"]
     radix: 2

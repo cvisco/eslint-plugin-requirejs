@@ -30,14 +30,16 @@
     "coveralls": "2.11.3",
     "eslint": "1.1.0",
     "istanbul": "0.3.17",
-    "mocha": "2.2.5"
+    "mocha": "2.2.5",
+    "shelljs": "^0.5.1",
+    "shelljs-nodecli": "^0.1.1"
   },
   "peerDependencies": {
     "eslint": ">=0.9.0"
   },
   "scripts": {
-    "test": "npm run-script lint && ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R dot ./tests/lib/*",
-    "mocha": "./node_modules/mocha/bin/mocha -R dot ./tests/lib/*",
-    "lint": "eslint ."
+    "test": "node makefile.js test",
+    "lint": "node makefile.js lint",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
