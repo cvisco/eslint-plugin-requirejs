@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### v0.5.2 - August 8, 2015
+
+* Prevent no-commonjs-return false positive (fixes #36)
+* Update: Provide schema for enforce-define rule
+* Build: Update eslint version to 1.1.0
+
 ### v0.5.1 - July 20, 2015
 
 * Fix: Compare basename against ignore list in enforce-define (fixes #33) (Casey Visco)
