@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Build file. Based in large part on functionality found in
+ *               eslint's own makefile, with necessary tweaks for building an
+ *               eslint plugin instead.
+ *
+ * @author Casey Visco
+ */
+
 "use strict";
 
 /* global cat */
@@ -5,6 +13,8 @@
 /* global exec */
 /* global exit */
 /* global find */
+/* global mv */
+/* global rm */
 /* global target */
 /* global test */
 
@@ -15,6 +25,8 @@
 require("shelljs/make");
 
 var path = require("path");
+var semver = require("semver");
+var dateformat = require("dateformat");
 var nodeCLI = require("shelljs-nodecli");
 
 //------------------------------------------------------------------------------
@@ -47,6 +59,43 @@ function fileType(extension) {
         return filename.substring(filename.lastIndexOf(".") + 1) === extension;
     };
 }
+
+/**
+ * Execute a command and return the output instead of printing it to stdout.
+ *
+ * @private
+ * @param  {String} cmd - command to execute
+ * @return {String} result of executed command
+ */
+function execSilent(cmd) {
+    return exec(cmd, { silent: true }).output;
+}
+
+/**
+ * Push supplied `tag` to supplied `list` only if it is a valid semver. This is
+ * a reducer function.
+ *
+ * @private
+ * @param  {Array}  list - array of valid semver tags
+ * @param  {String} tag  - tag to push if valid
+ * @return {Array}  modified `list`
+ */
+function validSemverTag(list, tag) {
+    if (semver.valid(tag)) {
+        list.push(tag);
+    }
+
+    return list;
+}
+
+function getVersionTags() {
+    return execSilent("git tag")
+        .trim()
+        .split("\n")
+        .reduce(validSemverTag, [])
+        .sort(semver.compare);
+}
+
 
 //------------------------------------------------------------------------------
 // Tasks
@@ -192,4 +241,36 @@ target.test = function () {
     if (errors) {
         exit(1);
     }
+};
+
+target.changelog = function () {
+
+    // get most recent two tags
+    var tags = getVersionTags(),
+        rangeTags = tags.slice(tags.length - 2),
+        timestamp = dateformat(new Date(), "mmmm d, yyyy"),
+        semverRe = /^\* \d\.\d.\d/;
+
+    // output header
+    ("### " + rangeTags[1] + " - " + timestamp + "\n").to("CHANGELOG.tmp");
+
+    // get log statements
+    var logs = execSilent("git log --pretty=format:\"* %s (%an)\" " + rangeTags.join("..")).split(/\n/g);
+
+    logs = logs.filter(function (line) {
+        return line.indexOf("Merge pull request") === -1 &&
+               line.indexOf("Merge branch") === -1 &&
+               !semverRe.test(line);
+    });
+
+    logs.push(""); // to create empty lines
+    logs.unshift("");
+
+    // output log statements
+    logs.join("\n").toEnd("CHANGELOG.tmp");
+
+    cat("CHANGELOG.tmp", "CHANGELOG.md").to("CHANGELOG.md.tmp");
+    rm("CHANGELOG.tmp");
+    rm("CHANGELOG.md");
+    mv("CHANGELOG.md.tmp", "CHANGELOG.md");
 };

@@ -1,10 +1,9 @@
-# CHANGELOG
-
 ### v0.5.2 - August 8, 2015
 
-* Prevent no-commonjs-return false positive (fixes #36)
-* Update: Provide schema for enforce-define rule
-* Build: Update eslint version to 1.1.0
+* Prevent no-commonjs-return false positive (fixes #36) (Casey Visco)
+* Build: Bump eslint version to 1.1.0 (Casey Visco)
+* Update: Provide schema for enforce-define rule (Casey Visco)
+* Build: Bump eslint version to 1.0.0 (Casey Visco)
 
 ### v0.5.1 - July 20, 2015
 
