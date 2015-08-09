@@ -1,3 +1,12 @@
+### v0.5.3 - August 8, 2015
+
+* Build: Add release scripts to package.json (Casey Visco)
+* Build: Add release tasks to makefile (Casey Visco)
+* Build: Add changelog task to makefile (Casey Visco)
+* Build: Add checkRules task to makefile (Casey Visco)
+* Build: Move lint and test tasks to makefile (Casey Visco)
+* Fix typo in default setting for enforce-define (Casey Visco)
+
 ### v0.5.2 - August 8, 2015
 
 * Prevent no-commonjs-return false positive (fixes #36) (Casey Visco)
