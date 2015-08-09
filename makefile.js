@@ -88,6 +88,12 @@ function validSemverTag(list, tag) {
     return list;
 }
 
+/**
+ * Retrieve a list of semver tags in descending order.
+ *
+ * @private
+ * @return {Array} list of version tags
+ */
 function getVersionTags() {
     return execSilent("git tag")
         .trim()
@@ -96,6 +102,36 @@ function getVersionTags() {
         .sort(semver.compare);
 }
 
+/**
+ * Create a release version, push tags and publish.
+ *
+ * @private
+ * @param  {String} type - type of release to do (patch, minor, major)
+ */
+function release(type) {
+    var newVersion;
+
+    target.test();
+
+    echo("Generating new version");
+    newVersion = execSilent("npm version " + type).trim();
+
+    target.changelog();
+
+    // add changelog to commit
+    exec("git add CHANGELOG.md");
+    exec("git commit --amend --no-edit");
+
+    // replace existing tag
+    exec("git tag -f " + newVersion);
+
+    // push all the things
+    echo("Publishing to git");
+    exec("git push origin master --tags");
+
+    echo("Publishing to npm");
+    exec("npm publish");
+}
 
 //------------------------------------------------------------------------------
 // Tasks
@@ -244,6 +280,7 @@ target.test = function () {
 };
 
 target.changelog = function () {
+    echo("Generating changelog");
 
     // get most recent two tags
     var tags = getVersionTags(),
@@ -273,4 +310,16 @@ target.changelog = function () {
     rm("CHANGELOG.tmp");
     rm("CHANGELOG.md");
     mv("CHANGELOG.md.tmp", "CHANGELOG.md");
+};
+
+target.patch = function () {
+    release("patch");
+};
+
+target.minor = function () {
+    release("minor");
+};
+
+target.major = function () {
+    release("major");
 };
