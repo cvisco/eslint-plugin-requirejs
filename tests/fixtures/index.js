@@ -36,6 +36,24 @@ function loadFixture(path) {
 //------------------------------------------------------------------------------
 
 [
+    "./amd/deps/none.js",
+    "./amd/deps/single_line/one.js",
+    "./amd/deps/single_line/two.js",
+    "./amd/deps/single_line/three.js",
+    "./amd/deps/single_line/four.js",
+    "./amd/deps/multi_line/one.js",
+    "./amd/deps/multi_line/two.js",
+    "./amd/deps/multi_line/three.js",
+    "./amd/deps/multi_line/four.js",
+    "./amd/deps/multi_line_paths/one.js",
+    "./amd/deps/multi_line_paths/two.js",
+    "./amd/deps/multi_line_paths/three.js",
+    "./amd/deps/multi_line_paths/four.js",
+    "./amd/deps/multi_line_names/one.js",
+    "./amd/deps/multi_line_names/two.js",
+    "./amd/deps/multi_line_names/three.js",
+    "./amd/deps/multi_line_names/four.js",
+
     // Always Invalid
     "./EMPTY_DEFINE",
     "./BAD_DEFINE",

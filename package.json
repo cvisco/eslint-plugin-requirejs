@@ -26,6 +26,9 @@
   "engines": {
     "node": ">=0.10"
   },
+  "dependencies": {
+    "lodash.uniq": "3.2.2"
+  },
   "devDependencies": {
     "coveralls": "2.11.3",
     "dateformat": "1.0.11",
