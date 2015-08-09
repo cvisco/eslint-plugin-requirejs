@@ -42,6 +42,9 @@
   "scripts": {
     "test": "node makefile.js test",
     "lint": "node makefile.js lint",
+    "patch": "node makefile.js patch",
+    "minor": "node makefile.js minor",
+    "major": "node makefile.js major",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
