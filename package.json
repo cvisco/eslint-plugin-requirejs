@@ -28,13 +28,13 @@
   },
   "devDependencies": {
     "coveralls": "2.11.3",
-    "dateformat": "^1.0.11",
+    "dateformat": "1.0.11",
     "eslint": "1.1.0",
     "istanbul": "0.3.17",
     "mocha": "2.2.5",
-    "semver": "^5.0.1",
-    "shelljs": "^0.5.1",
-    "shelljs-nodecli": "^0.1.1"
+    "semver": "5.0.1",
+    "shelljs": "0.5.1",
+    "shelljs-nodecli": "0.1.1"
   },
   "peerDependencies": {
     "eslint": ">=0.9.0"
@@ -45,6 +45,7 @@
     "patch": "node makefile.js patch",
     "minor": "node makefile.js minor",
     "major": "node makefile.js major",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "mocha": "mocha"
   }
 }
