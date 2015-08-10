@@ -1,3 +1,10 @@
+### v0.6.0 - August 9, 2015
+
+* New: Implement one-dependency-per-line rule (fixes #34) (Casey Visco)
+* Add empty schemas for rules that take no options (Casey Visco)
+* Build: Add mocha npm script for running individual tests (Casey Visco)
+* Build: Improve fixture loading (Casey Visco)
+
 ### v0.5.3 - August 8, 2015
 
 * Build: Add release scripts to package.json (Casey Visco)
