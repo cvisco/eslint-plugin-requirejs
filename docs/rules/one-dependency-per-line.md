@@ -8,11 +8,11 @@ This rule aims to enforce consistent line-break usage in dependency lists.
 
 ### Options
 
-The rule takes one option, an object, which has two keys, `paths` and `names`. These keys allow individual control over the line-break rules for, respectively, the dependency path list and the list of names (arguments) passed to the module definition function. Each key can either be a string `"always"` or `"never", or a numeric value representing the maximum number of dependencies each list can contain before enforcing the one-dependency-per-line rule. The default is `{ "paths": "always", "names": "always" }`.
+The rule takes one option, an object, which has two keys, `paths` and `names`. These keys allow individual control over the line-break rules for, respectively, the dependency path list and the list of names (arguments) passed to the module definition function. Each key can either be a string `"always"` or `"never"`, or a numeric value representing the maximum number of dependencies each list can contain before enforcing the one-dependency-per-line rule. The default is `{ "paths": "always", "names": "always" }`.
 
 ```json
-    "one-dependency-per-line: [2, { "paths": "always", "names": "never" }]
-    "one-dependency-per-line: [2, { "paths": 3, "names": 3 }]
+    "one-dependency-per-line": [2, { "paths": "always", "names": "never" }]
+    "one-dependency-per-line": [2, { "paths": 3, "names": 3 }]
 ```
 
 The following examples demonstate the behavior of these options.
@@ -80,7 +80,7 @@ When a number value is provided, it defines the maximum number of dependencies a
 In this mode, the following patterns are considered warnings:
 
 ```js
-// "one-dependency-per-line: [2, { "paths": "always", "names": 3 }]
+// "one-dependency-per-line": [2, { "paths": "always", "names": 3 }]
 require([
     'jquery',
     'underscore',
@@ -90,7 +90,7 @@ require([
     /* ... */
 });
 
-// "one-dependency-per-line: [2, { "paths": 2, "names": 2 }]
+// "one-dependency-per-line": [2, { "paths": 2, "names": 2 }]
 require(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
     /* ... */
 });
@@ -99,7 +99,7 @@ require(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
 Whereas, the following patterns are *not* considered warnings:
 
 ```js
-// "one-dependency-per-line: [2, { "paths": "always", "names": 3 }]
+// "one-dependency-per-line": [2, { "paths": "always", "names": 3 }]
 require([
     'jquery',
     'underscore',
@@ -114,7 +114,7 @@ require([
     /* ... */
 });
 
-// "one-dependency-per-line: [2, { "paths": 2, "names": 2 }]
+// "one-dependency-per-line": [2, { "paths": 2, "names": 2 }]
 require(['jquery', 'underscore'], function ($, _) {
     /* ... */
 });
