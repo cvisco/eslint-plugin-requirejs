@@ -6,7 +6,7 @@
 
 # eslint-plugin-requirejs
 
-Enforce code conventions for [RequireJS](http://requirejs.org) modules with [ESLint](https://www.github.com/eslint/eslint).
+Enforce code conventions for [RequireJS](http://requirejs.org) modules with [ESLint](http://eslint.org/).
 
 This plugin is under active development, and is updated frequently. Take a look at the [CHANGELOG](CHANGELOG.md) to see what's recently been added or fixed.
 
