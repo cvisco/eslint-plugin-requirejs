@@ -8,7 +8,7 @@
 
 Enforce code conventions for [RequireJS](http://requirejs.org) modules with [ESLint](http://eslint.org/).
 
-This plugin is under active development, and is updated frequently. Take a look at the [CHANGELOG](CHANGELOG.md) to see what's recently been added or fixed.
+This plugin is under active development, and is updated frequently. Take a look at the [CHANGELOG](https://github.com/cvisco/eslint-plugin-requirejs/blob/master/CHANGELOG.md) to see what's recently been added or fixed.
 
 ## Installation
 
