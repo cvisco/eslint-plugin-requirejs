@@ -98,6 +98,10 @@ ruleTester.run("enforce-define", rule, {
             errors: [ERROR]
         },
         {
+            code: fixtures.UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT,
+            errors: [ERROR]
+        },
+        {
             code: fixtures.NON_WRAPPED_EXPORTS,
             errors: [ERROR]
         },
