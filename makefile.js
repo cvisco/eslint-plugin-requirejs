@@ -8,15 +8,7 @@
 
 "use strict";
 
-/* global cat */
-/* global echo */
-/* global exec */
-/* global exit */
-/* global find */
-/* global mv */
-/* global rm */
-/* global target */
-/* global test */
+/* eslint-env shelljs */
 
 //------------------------------------------------------------------------------
 // Requirements
@@ -34,8 +26,7 @@ var nodeCLI = require("shelljs-nodecli");
 //------------------------------------------------------------------------------
 
 // Tools
-var ESLINT = "./node_modules/.bin/eslint ";
-var MOCHA = "./node_modules/mocha/bin/_mocha ";
+var MOCHA = path.normalize("./node_modules/mocha/bin/_mocha");
 
 // Files
 var MAKEFILE = "./makefile.js";
@@ -141,13 +132,13 @@ target.lint = function () {
     var errors = 0;
 
     echo("Linting makefile");
-    errors += exec(ESLINT + MAKEFILE).code;
+    errors += nodeCLI.exec("eslint", MAKEFILE).code;
 
     echo("Linting JavaScript files");
-    errors += exec(ESLINT + JS_FILES).code;
+    errors += nodeCLI.exec("eslint", JS_FILES).code;
 
     echo("Linting JavaScript test files");
-    errors += exec(ESLINT + TEST_FILES).code;
+    errors += nodeCLI.exec("eslint", TEST_FILES).code;
 
     if (errors) {
         exit(1);
