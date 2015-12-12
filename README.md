@@ -76,6 +76,7 @@ Enable the rules that you would like to use, for example:
 * [no-require-tourl](docs/rules/no-require-tourl.md): Disallow use of `require.toUrl` and `require.nameToUrl` (off by default)
 * [enforce-define](docs/rules/enforce-define.md): Require that all files be wrapped in a `define` call (off by default)
 * [one-dependency-per-line](docs/rules/one-dependency-per-line.md): Enforce line-break rules for AMD dependencies (off by default)
+* [amd-function-arity](docs/rules/amd-function-arity.md): Ensure AMD callbacks have correct number of parameters (off by default)
 
 ### Don't see the rule you're looking for?
 

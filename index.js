@@ -20,7 +20,8 @@ module.exports = {
         "no-assign-require": require("./lib/rules/no-assign-require"),
         "no-require-tourl": require("./lib/rules/no-require-tourl"),
         "enforce-define": require("./lib/rules/enforce-define"),
-        "one-dependency-per-line": require("./lib/rules/one-dependency-per-line")
+        "one-dependency-per-line": require("./lib/rules/one-dependency-per-line"),
+        "amd-function-arity": require("./lib/rules/amd-function-arity")
     },
     rulesConfig: {
 
@@ -45,6 +46,7 @@ module.exports = {
         "no-assign-require": 0,
         "no-require-tourl": 0,
         "enforce-define": 0,
-        "one-dependency-per-line": 0
+        "one-dependency-per-line": 0,
+        "amd-function-arity": 0
     }
 };
