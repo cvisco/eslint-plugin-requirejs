@@ -18,11 +18,6 @@ var RuleTester = require("eslint").RuleTester,
 // Tests
 //------------------------------------------------------------------------------
 
-var ERROR = {
-    message: "Multiple `define` calls in a single file are not permitted",
-    type: "Program"
-};
-
 var ruleTester = new RuleTester();
 
 ruleTester.run("no-multiple-define", rule, {
@@ -36,11 +31,20 @@ ruleTester.run("no-multiple-define", rule, {
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
         fixtures.NAMED_AMD_DEFINE,
-        fixtures.NAMED_AMD_EMPTY_DEFINE
+        fixtures.NAMED_AMD_EMPTY_DEFINE,
+        fixtures.MULTIPLE_DEFINE_ONE_CALL
     ],
 
     invalid: [
-        { code: fixtures.MULTIPLE_DEFINE, errors: [ERROR] }
+        {
+            code: fixtures.MULTIPLE_DEFINE,
+            errors: [{
+                message: "Multiple `define` calls in a single file are not permitted",
+                type: "CallExpression",
+                line: 3,
+                column: 1
+            }]
+        }
     ]
 
 });

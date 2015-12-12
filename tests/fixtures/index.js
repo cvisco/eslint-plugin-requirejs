@@ -132,5 +132,8 @@ function loadFixture(path) {
     "./BAD_REQUIRE_INVALID_CALLBACK",
     "./BAD_REQUIRE_INVALID_ERRBACK",
     "./UNWRAPPED_FILE",
-    "./UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT"
+    "./UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT",
+
+    // Edge cases that are valid
+    "./MULTIPLE_DEFINE_ONE_CALL"
 ].forEach(loadFixture);
