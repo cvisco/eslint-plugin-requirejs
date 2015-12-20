@@ -31,9 +31,15 @@ ruleTester.run("no-invalid-require", rule, {
         fixtures.AMD_REQUIRE,
         fixtures.AMD_REQUIRE_RELATIVE,
         fixtures.AMD_REQUIRE_WITH_ERRBACK,
+        fixtures.AMD_REQUIRE_CALLEXPRESSION_CALLBACK,
+        fixtures.AMD_REQUIRE_MEMBEREXPRESSION_CALLBACK,
+        fixtures.AMD_REQUIRE_IDENTIFIER_CALLBACK,
         fixtures.AMD_REQUIREJS,
         fixtures.AMD_REQUIREJS_RELATIVE,
         fixtures.AMD_REQUIREJS_WITH_ERRBACK,
+        fixtures.AMD_REQUIREJS_CALLEXPRESSION_CALLBACK,
+        fixtures.AMD_REQUIREJS_MEMBEREXPRESSION_CALLBACK,
+        fixtures.AMD_REQUIREJS_IDENTIFIER_CALLBACK,
         fixtures.CJS_WITH_EXPORTS,
         fixtures.CJS_WITH_MODULE_EXPORTS,
         fixtures.CJS_WITH_RETURN,
@@ -69,7 +75,9 @@ ruleTester.run("no-invalid-require", rule, {
         { code: fixtures.BAD_REQUIRE_STRING_DEP, errors: [ERROR] },
         { code: fixtures.BAD_REQUIREJS_STRING_DEP, errors: [ERROR] },
         { code: fixtures.BAD_REQUIRE_INVALID_CALLBACK, errors: [ERROR] },
-        { code: fixtures.BAD_REQUIRE_INVALID_ERRBACK, errors: [ERROR] }
+        { code: fixtures.BAD_REQUIRE_INVALID_CALLBACK_ARRAY, errors: [ERROR] },
+        { code: fixtures.BAD_REQUIRE_INVALID_ERRBACK, errors: [ERROR] },
+        { code: fixtures.BAD_REQUIRE_INVALID_ERRBACK_ARRAY, errors: [ERROR] }
     ]
 
 });
