@@ -1,3 +1,15 @@
+### v0.7.0 - December 19, 2015
+
+* Fix: no-invalid-require tolerates Identifier/CallExpression callbacks (fixes #44) (Kevin Partington)
+* Build: Added files array to package.json (fixes #40) (Kevin Partington)
+* New: amd-function-arity rule (fixes #38) (Kevin Partington)
+* Build: Ensuring build can run on Windows (fixes #41) (Kevin Partington)
+* Update: no-multiple-define checks CallExpression only (fixes #42) (Kevin Partington)
+* Fix: enforce-define will warn on any non-ExpressionStatement (fixes #37) (Kevin Partington)
+* Docs: Use full URL for CHANGELOG in README (Casey Visco)
+* Docs: Link to eslint.org in README instead of repo (Casey Visco)
+* Docs: Fix typos in one-dependency-per-line docs (Casey Visco)
+
 ### v0.6.0 - August 9, 2015
 
 * New: Implement one-dependency-per-line rule (fixes #34) (Casey Visco)
