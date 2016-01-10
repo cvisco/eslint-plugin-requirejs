@@ -70,6 +70,11 @@ ruleTester.run("amd-function-arity", rule, {
         fixtures.DYNAMIC_MIXED_AMD_REQUIRE,
         fixtures.DYNAMIC_MIXED_AMD_REQUIREJS,
 
+        // Valid because dependency array arity is unknowable
+        fixtures.DYNAMIC_VARIABLE_AMD_DEFINE,
+        fixtures.DYNAMIC_VARIABLE_AMD_NAMED_DEFINE,
+        fixtures.DYNAMIC_VARIABLE_AMD_REQUIRE,
+
         // Valid only if allowExtraDependencies is enabled
         {
             code: fixtures.AMD_DEFINE_TOO_FEW_CALLBACK_PARAMS,
