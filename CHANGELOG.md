@@ -1,3 +1,7 @@
+### v0.7.2 - January 13, 2016
+
+* Build: Remove duplicate keys in .eslintrc (Casey Visco)
+
 ### v0.7.1 - January 13, 2016
 
 * Fix: amd-function-arity no longer reports on dynamic dependencies (fixes #50) (Kevin Partington)
