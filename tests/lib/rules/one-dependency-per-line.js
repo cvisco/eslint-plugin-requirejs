@@ -186,47 +186,114 @@ var NEVER_NAMES_ERROR = {
         {
             code: fixtures.amd.deps.single_line.two,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.two
         },
         {
             code: fixtures.amd.deps.single_line.three,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.three
         },
         {
             code: fixtures.amd.deps.single_line.four,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.four
         },
         {
             code: fixtures.amd.deps.multi_line_names.two,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line.two
         },
         {
             code: fixtures.amd.deps.multi_line_names.three,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line.three
         },
         {
             code: fixtures.amd.deps.multi_line_names.four,
             options: [{}],
-            errors: [ ALWAYS_PATHS_ERROR ]
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line.four
         },
         {
             code: fixtures.amd.deps.multi_line_paths.two,
             options: [{}],
-            errors: [ ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.two
         },
         {
             code: fixtures.amd.deps.multi_line_paths.three,
             options: [{}],
-            errors: [ ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.three
         },
         {
             code: fixtures.amd.deps.multi_line_paths.four,
             options: [{}],
-            errors: [ ALWAYS_NAMES_ERROR ]
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line.four
+        },
+        {
+            code: fixtures.amd.deps.single_line_no_indent.two,
+            options: [{}],
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_no_indent.two
+        },
+        {
+            code: fixtures.amd.deps.single_line_no_indent.three,
+            options: [{}],
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_no_indent.three
+        },
+        {
+            code: fixtures.amd.deps.single_line_no_indent.four,
+            options: [{}],
+            errors: [ ALWAYS_PATHS_ERROR, ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_no_indent.four
+        },
+
+        // "always" for paths only
+        {
+            code: fixtures.amd.deps.single_line.two,
+            options: [{"names": "never"}],
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line_paths.two
+        },
+        {
+            code: fixtures.amd.deps.single_line.three,
+            options: [{"names": "never"}],
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line_paths.three
+        },
+        {
+            code: fixtures.amd.deps.single_line.four,
+            options: [{"names": "never"}],
+            errors: [ ALWAYS_PATHS_ERROR ],
+            output: fixtures.amd.deps.multi_line_paths.four
+        },
+
+        // "always" for names only
+        {
+            code: fixtures.amd.deps.single_line.two,
+            options: [{"paths": "never"}],
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_names.two
+        },
+        {
+            code: fixtures.amd.deps.single_line.three,
+            options: [{"paths": "never"}],
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_names.three
+        },
+        {
+            code: fixtures.amd.deps.single_line.four,
+            options: [{"paths": "never"}],
+            errors: [ ALWAYS_NAMES_ERROR ],
+            output: fixtures.amd.deps.multi_line_names.four
         },
 
         // "never" for both
