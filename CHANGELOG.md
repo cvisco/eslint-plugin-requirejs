@@ -1,3 +1,7 @@
+### v0.7.1 - January 13, 2016
+
+* Fix: amd-function-arity no longer reports on dynamic dependencies (fixes #50) (Kevin Partington)
+
 ### v0.7.0 - December 19, 2015
 
 * Fix: no-invalid-require tolerates Identifier/CallExpression callbacks (fixes #44) (Kevin Partington)
