@@ -27,7 +27,6 @@ rules:
     no-alert: 2
     no-array-constructor: 2
     no-caller: 2
-    no-console: 0
     no-delete-var: 2
     no-empty-label: 2
     no-eval: 2
@@ -53,7 +52,6 @@ rules:
     no-new-wrappers: 2
     no-octal: 2
     no-octal-escape: 2
-    no-process-exit: 2
     no-proto: 2
     no-redeclare: 2
     no-return-assign: 2
