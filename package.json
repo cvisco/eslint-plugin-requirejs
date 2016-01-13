@@ -31,12 +31,13 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "lodash.uniq": "3.2.2"
+    "lodash.uniq": "3.2.2",
+    "lodash.repeat": "3.0.1"
   },
   "devDependencies": {
     "coveralls": "2.11.3",
     "dateformat": "1.0.11",
-    "eslint": "1.1.0",
+    "eslint": "1.9.0",
     "istanbul": "0.3.17",
     "mocha": "2.2.5",
     "semver": "5.0.1",
@@ -44,7 +45,7 @@
     "shelljs-nodecli": "0.1.1"
   },
   "peerDependencies": {
-    "eslint": ">=0.9.0"
+    "eslint": ">=1.4.0"
   },
   "scripts": {
     "test": "node makefile.js test",

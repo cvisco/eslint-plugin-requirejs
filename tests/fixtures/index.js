@@ -41,6 +41,9 @@ function loadFixture(path) {
     "./amd/deps/single_line/two.js",
     "./amd/deps/single_line/three.js",
     "./amd/deps/single_line/four.js",
+    "./amd/deps/single_line_no_indent/two.js",
+    "./amd/deps/single_line_no_indent/three.js",
+    "./amd/deps/single_line_no_indent/four.js",
     "./amd/deps/multi_line/one.js",
     "./amd/deps/multi_line/two.js",
     "./amd/deps/multi_line/three.js",
@@ -53,6 +56,9 @@ function loadFixture(path) {
     "./amd/deps/multi_line_names/two.js",
     "./amd/deps/multi_line_names/three.js",
     "./amd/deps/multi_line_names/four.js",
+    "./amd/deps/multi_line_no_indent/two.js",
+    "./amd/deps/multi_line_no_indent/three.js",
+    "./amd/deps/multi_line_no_indent/four.js",
 
     // Always Invalid
     "./EMPTY_DEFINE",
