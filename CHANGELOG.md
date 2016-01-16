@@ -1,3 +1,8 @@
+### v0.8.0 - January 16, 2016
+
+* New: Fixer for one-dependency-per-line rule (fixes #51). (Afnan Fahim)
+* Build: Add Node v4 and v5 targets to travis.yml (Casey Visco)
+
 ### v0.7.2 - January 13, 2016
 
 * Build: Remove duplicate keys in .eslintrc (Casey Visco)
