@@ -1,3 +1,9 @@
+### v0.9.0 - January 24, 2016
+
+* Build: Update dependency versions (Casey Visco)
+* New: sort-amd-paths rule (fixes #59) (Ondrej Brejla)
+* Build: Auto-load fixtures (fixes #54) (Casey Visco)
+
 ### v0.8.0 - January 16, 2016
 
 * New: Fixer for one-dependency-per-line rule (fixes #51). (Afnan Fahim)
