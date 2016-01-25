@@ -63,7 +63,14 @@ ruleTester.run("no-js-extension", rule, {
         fixtures.CONDITIONAL_NESTED_AMD_REQUIRE,
         fixtures.CONDITIONAL_NESTED_AMD_REQUIREJS,
         fixtures.CONDITIONAL_TERNARY_CJS_REQUIRE,
-        fixtures.CONDITIONAL_TERNARY_CJS_REQUIREJS
+        fixtures.CONDITIONAL_TERNARY_CJS_REQUIREJS,
+
+        // plugins check
+
+        fixtures.AMD_DEFINE_WITH_FOO_PLUGIN_AND_JS_EXT,
+        fixtures.AMD_REQUIRE_WITH_FOO_PLUGIN_AND_JS_EXT,
+        fixtures.AMD_REQUIREJS_WITH_FOO_PLUGIN_AND_JS_EXT,
+        fixtures.CJS_WITH_FOO_PLUGIN_AND_JS_EXT
     ],
 
     invalid: [
@@ -73,7 +80,53 @@ ruleTester.run("no-js-extension", rule, {
         { code: fixtures.AMD_DEFINE_WITH_JS_EXT, errors: [ERROR] },
         { code: fixtures.CJS_WITH_JS_EXT, errors: [ERROR] },
         { code: fixtures.NAMED_AMD_DEFINE_WITH_JS_EXT, errors: [ERROR] },
-        { code: fixtures.NAMED_CJS_DEFINE_WITH_JS_EXT, errors: [ERROR] }
+        { code: fixtures.NAMED_CJS_DEFINE_WITH_JS_EXT, errors: [ERROR] },
+
+        // one plugin check
+
+        {
+            code: fixtures.AMD_DEFINE_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.AMD_REQUIRE_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.AMD_REQUIREJS_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.CJS_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "foo" ]],
+            errors: [ERROR]
+        },
+
+        // more plugins check
+
+        {
+            code: fixtures.AMD_DEFINE_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "more", "plugins", "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.AMD_REQUIRE_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "more", "plugins", "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.AMD_REQUIREJS_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "more", "plugins", "foo" ]],
+            errors: [ERROR]
+        },
+        {
+            code: fixtures.CJS_WITH_FOO_PLUGIN_AND_JS_EXT,
+            options: [[ "more", "plugins", "foo" ]],
+            errors: [ERROR]
+        }
     ]
 
 });
