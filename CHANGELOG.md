@@ -1,3 +1,8 @@
+### v0.9.1 - January 25, 2016
+
+* API: introduce getAmdCallback() to utils API (fixes #65) (Ondrej Brejla)
+* Fix: Sort-amd-path rule should ignore some paths (fixes #63) (Ondrej Brejla)
+
 ### v0.9.0 - January 24, 2016
 
 * Build: Update dependency versions (Casey Visco)
