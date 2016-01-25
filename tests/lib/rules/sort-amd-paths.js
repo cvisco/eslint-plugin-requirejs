@@ -35,6 +35,7 @@ ruleTester.run("sort-amd-paths", rule, {
         fixtures.ALPHABETICAL_PATHS_MORE_PATHS_IN_ARRAY,
         fixtures.ALPHABETICAL_PATHS_BASENAME_CAPITAL,
         fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
+        fixtures.ALPHABETICAL_PATHS_IGNORED_PATHS,
 
         // valid `define` with { "compare": "dirname-basename" }
 
