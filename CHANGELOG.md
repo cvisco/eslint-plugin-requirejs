@@ -1,3 +1,7 @@
+### v0.9.2 - January 26, 2016
+
+* Update: invalid no-js-extension (fixes #62) (Ondrej Brejla)
+
 ### v0.9.1 - January 25, 2016
 
 * API: introduce getAmdCallback() to utils API (fixes #65) (Ondrej Brejla)
