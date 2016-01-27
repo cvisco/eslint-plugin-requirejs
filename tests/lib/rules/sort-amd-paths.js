@@ -17,10 +17,12 @@ var RuleTester = require("eslint").RuleTester,
 // Tests
 //------------------------------------------------------------------------------
 
-var ERROR = {
-    message: "Required paths are not in alphabetical order.",
-    type: "CallExpression"
-};
+function makeErrorMessage(expectedPath) {
+    return {
+        message: "Required paths are not in alphabetical order (expected '" + expectedPath + "').",
+        type: "Literal"
+    };
+}
 
 var ruleTester = new RuleTester();
 
@@ -201,7 +203,7 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         },
 
         // invalid `define` with { "compare": "dirname-basename" }
@@ -209,7 +211,7 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "dirname-basename" }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         },
 
         // invalid `define` with { "compare": "dirname-basename", "ignoreCase": true }
@@ -217,7 +219,7 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "dirname-basename", "ignoreCase": true }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         },
 
         // invalid `define` with { "compare": "dirname-basename", "ignoreCase": false }
@@ -225,7 +227,7 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "dirname-basename", "ignoreCase": false }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         },
 
         // invalid `define` with { "compare": "fullpath" }
@@ -233,13 +235,13 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
             options: [{ "compare": "fullpath" }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/ccc/ddd")]
         },
 
         {
             code: fixtures.ALPHABETICAL_PATHS_BASENAME_CAPITAL,
             options: [{ "compare": "fullpath" }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/ccc/ddd")]
         },
 
         // invalid `define` with { "compare": "fullpath", "ignoreCase": true }
@@ -247,13 +249,13 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
             options: [{ "compare": "fullpath", "ignoreCase": true }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/ccc/ddd")]
         },
 
         {
             code: fixtures.ALPHABETICAL_PATHS_BASENAME_CAPITAL,
             options: [{ "compare": "fullpath", "ignoreCase": true }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/ccc/ddd")]
         },
 
         // invalid `define` with { "compare": "fullpath", "ignoreCase": false }
@@ -261,20 +263,20 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
             options: [{ "compare": "fullpath", "ignoreCase": false }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/ccc/ddd")]
         },
 
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "fullpath", "ignoreCase": false }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         },
 
         // invalid `define` with { "compare": "basename" }
 
         {
             code: fixtures.ALPHABETICAL_PATHS_BASENAME_INVALID_ORDER,
-            errors: [ERROR],
+            errors: [makeErrorMessage("xxx/aaa")],
             options: [{ "compare": "basename" }]
         },
 
@@ -282,7 +284,7 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_BASENAME_INVALID_ORDER,
-            errors: [ERROR],
+            errors: [makeErrorMessage("xxx/aaa")],
             options: [{ "compare": "basename", "ignoreCase": true }]
         },
 
@@ -290,14 +292,14 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_BASENAME_INVALID_ORDER,
-            errors: [ERROR],
+            errors: [makeErrorMessage("xxx/aaa")],
             options: [{ "compare": "basename", "ignoreCase": false }]
         },
 
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "basename", "ignoreCase": false }],
-            errors: [ERROR]
+            errors: [makeErrorMessage("aaa/bbb/Aaa")]
         }
     ]
 
