@@ -1,3 +1,9 @@
+### v0.9.3 - January 28, 2016
+
+* Fix failing tests in sort-amd-paths (Casey Visco)
+* Update: sort-amd-paths rule should give a better feedback (fixes #69) (Ondrej Brejla)
+* Update: sort-amd-paths should consider "/" before anything else (fixes #70) (Ondřej Brejla)
+
 ### v0.9.2 - January 26, 2016
 
 * Update: invalid no-js-extension (fixes #62) (Ondrej Brejla)
