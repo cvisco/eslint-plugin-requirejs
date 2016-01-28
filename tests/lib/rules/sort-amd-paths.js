@@ -36,6 +36,7 @@ ruleTester.run("sort-amd-paths", rule, {
         fixtures.ALPHABETICAL_PATHS_BASENAME_CAPITAL,
         fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
         fixtures.ALPHABETICAL_PATHS_IGNORED_PATHS,
+        fixtures.ALPHABETICAL_PATHS_SLASH_PUNC_VALID,
 
         // valid `define` with { "compare": "dirname-basename" }
 
@@ -201,6 +202,16 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
+            errors: [ERROR]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_SLASH_PUNC_INVALID,
+            errors: [ERROR]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_FIRST_LONGER_INVALID,
             errors: [ERROR]
         },
 
