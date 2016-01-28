@@ -209,12 +209,12 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_SLASH_PUNC_INVALID,
-            errors: [ERROR]
+            errors: [makeErrorMessage("foo/bar/baz/Bat")]
         },
 
         {
             code: fixtures.ALPHABETICAL_PATHS_FIRST_LONGER_INVALID,
-            errors: [ERROR]
+            errors: [makeErrorMessage("foo/bar/baz/Bat")]
         },
 
         // invalid `define` with { "compare": "dirname-basename" }
