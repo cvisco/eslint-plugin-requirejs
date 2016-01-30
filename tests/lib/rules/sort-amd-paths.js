@@ -39,6 +39,7 @@ ruleTester.run("sort-amd-paths", rule, {
         fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
         fixtures.ALPHABETICAL_PATHS_IGNORED_PATHS,
         fixtures.ALPHABETICAL_PATHS_SLASH_PUNC_VALID,
+        fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
 
         // valid `define` with { "compare": "dirname-basename" }
 
@@ -72,6 +73,11 @@ ruleTester.run("sort-amd-paths", rule, {
             options: [{ "compare": "dirname-basename" }]
         },
 
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "dirname-basename" }]
+        },
+
         // valid `define` with { "compare": "dirname-basename", "ignoreCase": true }
 
         {
@@ -101,6 +107,11 @@ ruleTester.run("sort-amd-paths", rule, {
 
         {
             code: fixtures.ALPHABETICAL_PATHS_FULLPATH_INVALID,
+            options: [{ "compare": "dirname-basename", "ignoreCase": true }]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
             options: [{ "compare": "dirname-basename", "ignoreCase": true }]
         },
 
@@ -183,6 +194,90 @@ ruleTester.run("sort-amd-paths", rule, {
             options: [{ "compare": "basename", "ignoreCase": false }]
         },
 
+        // valid `define` with { "compare": "dirname-basename", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "preserve" }]
+        },
+
+        // valid `define` with { "compare": "fullpath", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "fullpath", "sortPlugins": "preserve" }]
+        },
+
+        // valid `define` with { "compare": "basename", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_PRESERVE_IGNORE,
+            options: [{ "compare": "basename", "sortPlugins": "preserve" }]
+        },
+
+        // valid `define` with { "compare": "dirname-basename", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "ignore" }]
+        },
+
+        // valid `define` with { "compare": "fullpath", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "fullpath", "sortPlugins": "ignore" }]
+        },
+
+        // valid `define` with { "compare": "basename", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_PRESERVE_IGNORE,
+            options: [{ "compare": "basename", "sortPlugins": "ignore" }]
+        },
+
+        // valid `define` with { "compare": "dirname-basename", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "first" }]
+        },
+
+        // valid `define` with { "compare": "fullpath", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "fullpath", "sortPlugins": "first" }]
+        },
+
+        // valid `define` with { "compare": "basename", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_FIRST,
+            options: [{ "compare": "basename", "sortPlugins": "first" }]
+        },
+
+        // valid `define` with { "compare": "dirname-basename", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "last" }]
+        },
+
+        // valid `define` with { "compare": "fullpath", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "fullpath", "sortPlugins": "last" }]
+        },
+
+        // valid `define` with { "compare": "basename", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_LAST,
+            options: [{ "compare": "basename", "sortPlugins": "last" }]
+        },
+
         // valid common require
 
         fixtures.AMD_REQUIRE,
@@ -215,6 +310,21 @@ ruleTester.run("sort-amd-paths", rule, {
         {
             code: fixtures.ALPHABETICAL_PATHS_FIRST_LONGER_INVALID,
             errors: [makeErrorMessage("foo/bar/baz/Bat")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
         },
 
         // invalid `define` with { "compare": "dirname-basename" }
@@ -311,6 +421,222 @@ ruleTester.run("sort-amd-paths", rule, {
             code: fixtures.ALPHABETICAL_PATHS_INVALID_ORDER,
             options: [{ "compare": "basename", "ignoreCase": false }],
             errors: [makeErrorMessage("aaa/bbb/Aaa")]
+        },
+
+        // invalid `define` with { "compare": "dirname-basename", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "fullpath", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "fullpath", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "fullpath", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "fullpath", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "basename", "sortPlugins": "preserve" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_FIRST,
+            options: [{ "compare": "basename", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("awhat/ever1/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_LAST,
+            options: [{ "compare": "basename", "sortPlugins": "preserve" }],
+            errors: [makeErrorMessage("hhh!dwhat/ever5/ddd")]
+        },
+
+        // invalid `define` with { "compare": "dirname-basename", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("ccc/ccc/ccc")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "fullpath", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "fullpath", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("ccc/ccc/ccc")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "fullpath", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "fullpath", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "basename", "sortPlugins": "ignore" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_FIRST,
+            options: [{ "compare": "basename", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("awhat/ever1/aaa")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_LAST,
+            options: [{ "compare": "basename", "sortPlugins": "ignore" }],
+            errors: [makeErrorMessage("hhh!dwhat/ever5/ddd")]
+        },
+
+        // invalid `define` with { "compare": "dirname-basename", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "fullpath", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "fullpath", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "fullpath", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_LAST,
+            options: [{ "compare": "fullpath", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("bbb!fff/fff/fff1")]
+        },
+
+        // invalid `define` with { "compare": "basename", "sortPlugins": "first" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_PRESERVE_IGNORE,
+            options: [{ "compare": "basename", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("hhh!dwhat/ever5/ddd")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_LAST,
+            options: [{ "compare": "basename", "sortPlugins": "first" }],
+            errors: [makeErrorMessage("hhh!dwhat/ever5/ddd")]
+        },
+
+        // invalid `define` with { "compare": "dirname-basename", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("ccc/ccc/ccc")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("ggg/ggg/ggg")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "dirname-basename", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        // invalid `define` with { "compare": "fullpath", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_PRESERVE,
+            options: [{ "compare": "fullpath", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("ccc/ccc/ccc")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_IGNORE,
+            options: [{ "compare": "fullpath", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("ggg/ggg/ggg")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_PLUGIN_FIRST,
+            options: [{ "compare": "fullpath", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("aaa/aaa/aaa")]
+        },
+
+        // invalid `define` with { "compare": "basename", "sortPlugins": "last" }
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_PRESERVE_IGNORE,
+            options: [{ "compare": "basename", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("gwhat/ever4/ggg")]
+        },
+
+        {
+            code: fixtures.ALPHABETICAL_PATHS_BASENAME_PLUGIN_FIRST,
+            options: [{ "compare": "basename", "sortPlugins": "last" }],
+            errors: [makeErrorMessage("awhat/ever1/aaa")]
         }
     ]
 
