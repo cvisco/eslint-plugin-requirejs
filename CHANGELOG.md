@@ -1,3 +1,7 @@
+### v0.9.4 - February 1, 2016
+
+* Update: sorting of paths with a plugin prefix (fixes #73) (Ondrej Brejla)
+
 ### v0.9.3 - January 28, 2016
 
 * Fix failing tests in sort-amd-paths (Casey Visco)
