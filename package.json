@@ -31,8 +31,8 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "lodash.uniq": "4.0.1",
-    "lodash.repeat": "3.1.0"
+    "lodash.repeat": "^4.0.3",
+    "lodash.uniq": "^4.3.0"
   },
   "devDependencies": {
     "coveralls": "2.11.6",
