@@ -31,17 +31,17 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "lodash.repeat": "^4.0.3",
-    "lodash.uniq": "^4.3.0"
+    "lodash.repeat": "4.0.3",
+    "lodash.uniq": "4.3.0"
   },
   "devDependencies": {
-    "coveralls": "2.11.6",
+    "coveralls": "2.11.9",
     "dateformat": "1.0.12",
-    "eslint": "1.9.0",
-    "istanbul": "0.4.2",
-    "mocha": "2.3.4",
-    "semver": "5.1.0",
-    "shelljs": "0.5.3",
+    "eslint": "3.0.1",
+    "istanbul": "0.4.4",
+    "mocha": "2.5.3",
+    "semver": "5.2.0",
+    "shelljs": "0.7.0",
     "shelljs-nodecli": "0.1.1"
   },
   "peerDependencies": {
