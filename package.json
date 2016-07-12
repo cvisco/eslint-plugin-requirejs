@@ -48,6 +48,7 @@
     "eslint": ">=2.0.0"
   },
   "scripts": {
+    "unit": "node makefile.js unit",
     "test": "node makefile.js test",
     "lint": "node makefile.js lint",
     "patch": "node makefile.js patch",

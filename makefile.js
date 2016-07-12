@@ -254,11 +254,8 @@ target.checkRules = function () {
     }
 };
 
-target.test = function () {
+target.unit = function () {
     var errors = 0;
-
-    target.lint();
-    target.checkRules();
 
     echo("Running test suite");
 
@@ -268,6 +265,12 @@ target.test = function () {
     if (errors) {
         exit(1);
     }
+};
+
+target.test = function () {
+    target.lint();
+    target.checkRules();
+    target.unit();
 };
 
 target.changelog = function () {
