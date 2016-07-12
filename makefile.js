@@ -280,7 +280,7 @@ target.changelog = function () {
     var tags = getVersionTags(),
         rangeTags = tags.slice(tags.length - 2),
         timestamp = dateformat(new Date(), "mmmm d, yyyy"),
-        semverRe = /^\* \d\.\d.\d/;
+        semverRe = /^\* \d+\.\d+.\d+/;
 
     // output header
     ("### " + rangeTags[1] + " - " + timestamp + "\n").to("CHANGELOG.tmp");

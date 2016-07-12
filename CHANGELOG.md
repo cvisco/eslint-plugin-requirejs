@@ -1,6 +1,6 @@
+
 ### v0.10.0 - July 11, 2016
 
-* 0.10.0 (Casey Visco)
 * Add array of allowed paths to allowExtraDependencies of amd-function-arity (fixes #77) (Sam Bason)
 
 ### v0.9.4 - February 1, 2016
