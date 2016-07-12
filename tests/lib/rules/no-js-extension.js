@@ -28,6 +28,7 @@ var ruleTester = new RuleTester();
 ruleTester.run("no-js-extension", rule, {
 
     valid: [
+        fixtures.BAD_REQUIRE_EMPTY,
         fixtures.AMD_DEFINE,
         fixtures.AMD_EMPTY_DEFINE,
         fixtures.AMD_EMPTY_REQUIRE,
