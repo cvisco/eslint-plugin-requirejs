@@ -162,33 +162,6 @@ target.checkRules = function () {
         return configFile.rules.hasOwnProperty(rule);
     }
 
-    function hasDefaultSettingInConfig(rule) {
-        var setting = configFile.rulesConfig[rule];
-
-        return typeof setting === "number" ||
-               (setting && typeof setting[0] === "number");
-    }
-
-    function isOffInConfig(rule) {
-        var setting = configFile.rulesConfig[rule];
-
-        return setting === 0 || (setting && setting[0] === 0);
-    }
-
-    function isOnInConfig(rule) {
-        return !isOffInConfig(rule);
-    }
-
-    function isOffInReadme(rule) {
-        var line = new RegExp("\\* \\[" + rule + "\\].*").exec(readmeText);
-
-        return (line ? line[0] : "").indexOf("(off by default)") !== -1;
-    }
-
-    function isOnInReadme(rule) {
-        return !isOffInReadme(rule);
-    }
-
     function hasIdInTitle(docFile, id) {
         var docText = cat(docFile);
         var idInTitleRegExp = new RegExp("^# (.*?) \\(" + id + "\\)");
@@ -233,20 +206,6 @@ target.checkRules = function () {
             errors++;
         }
 
-        if (!hasDefaultSettingInConfig(basename)) {
-            console.error("Missing default setting for %s in index.js", basename);
-            errors++;
-        }
-
-        if (isOffInReadme(basename) && isOnInConfig(basename)) {
-            console.error("README states that %s is off by default, but it is enabled in index.js.", basename);
-            errors++;
-        }
-
-        if (isOffInConfig(basename) && isOnInReadme(basename)) {
-            console.error("Missing '(off by default)' for rule %s in README", basename);
-            errors++;
-        }
     });
 
     if (errors) {
