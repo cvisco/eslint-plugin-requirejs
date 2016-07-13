@@ -23,32 +23,5 @@ module.exports = {
         "one-dependency-per-line": require("./lib/rules/one-dependency-per-line"),
         "amd-function-arity": require("./lib/rules/amd-function-arity"),
         "sort-amd-paths": require("./lib/rules/sort-amd-paths")
-    },
-    rulesConfig: {
-
-        // Potential Errors
-        "no-invalid-define": 2,
-        "no-invalid-require": 2,
-        "no-multiple-define": 2,
-        "no-assign-exports": 2,
-        "no-js-extension": 2,
-
-        // Stylistic Choices
-        "no-object-define": 0,
-        "no-function-define": 0,
-        "no-amd-define": 0,
-        "no-named-define": 0,
-        "no-commonjs-wrapper": 0,
-        "no-commonjs-return": 0,
-        "no-commonjs-exports": 0,
-        "no-commonjs-module-exports": 0,
-        "no-dynamic-require": 0,
-        "no-conditional-require": 0,
-        "no-assign-require": 0,
-        "no-require-tourl": 0,
-        "enforce-define": 0,
-        "one-dependency-per-line": 0,
-        "amd-function-arity": 0,
-        "sort-amd-paths": 0
     }
 };

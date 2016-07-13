@@ -62,22 +62,22 @@ Enable the rules that you would like to use, for example:
 
 ### Stylistic Choices
 
-* [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define` (off by default)
-* [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define` (off by default)
-* [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define` (off by default)
-* [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define` (off by default)
-* [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper (off by default)
-* [no-commonjs-return](docs/rules/no-commonjs-return.md): Disallow use of `return` statement in a module definition when using Simplified CommonJS Wrapper (off by default)
-* [no-commonjs-exports](docs/rules/no-commonjs-exports.md): Disallow use of `exports` in a module definition when using Simplified CommonJS Wrapper (off by default)
-* [no-commonjs-module-exports](docs/rules/no-commonjs-module-exports.md): Disallow use of `module.exports` in a module definition when using Simplified CommonJS Wrapper (off by default)
-* [no-dynamic-require](docs/rules/no-dynamic-require.md): Disallow use of dynamically generated paths in a `require` call (off by default)
-* [no-conditional-require](docs/rules/no-conditional-require.md): Disallow use of conditional `require` calls (off by default)
-* [no-assign-require](docs/rules/no-assign-require.md): Disallow assignment to `require` or `window.require` (off by default)
-* [no-require-tourl](docs/rules/no-require-tourl.md): Disallow use of `require.toUrl` and `require.nameToUrl` (off by default)
-* [enforce-define](docs/rules/enforce-define.md): Require that all files be wrapped in a `define` call (off by default)
-* [one-dependency-per-line](docs/rules/one-dependency-per-line.md): Enforce line-break rules for AMD dependencies (off by default)
-* [amd-function-arity](docs/rules/amd-function-arity.md): Ensure AMD callbacks have correct number of parameters (off by default)
-* [sort-amd-paths](docs/rules/sort-amd-paths.md): Ensure that required paths are in alphabetical order (off by default)
+* [no-object-define](docs/rules/no-object-define.md): Disallow Simple Name/Value Pairs form of `define`
+* [no-function-define](docs/rules/no-function-define.md): Disallow Simple Function form of `define`
+* [no-amd-define](docs/rules/no-amd-define.md): Disallow AMD (dependency array) form of `define`
+* [no-named-define](docs/rules/no-named-define.md): Disallow named module form of `define`
+* [no-commonjs-wrapper](docs/rules/no-commonjs-wrapper.md): Disallow use of Simplified CommonJS Wrapper
+* [no-commonjs-return](docs/rules/no-commonjs-return.md): Disallow use of `return` statement in a module definition when using Simplified CommonJS Wrapper
+* [no-commonjs-exports](docs/rules/no-commonjs-exports.md): Disallow use of `exports` in a module definition when using Simplified CommonJS Wrapper
+* [no-commonjs-module-exports](docs/rules/no-commonjs-module-exports.md): Disallow use of `module.exports` in a module definition when using Simplified CommonJS Wrapper
+* [no-dynamic-require](docs/rules/no-dynamic-require.md): Disallow use of dynamically generated paths in a `require` call
+* [no-conditional-require](docs/rules/no-conditional-require.md): Disallow use of conditional `require` calls
+* [no-assign-require](docs/rules/no-assign-require.md): Disallow assignment to `require` or `window.require`
+* [no-require-tourl](docs/rules/no-require-tourl.md): Disallow use of `require.toUrl` and `require.nameToUrl`
+* [enforce-define](docs/rules/enforce-define.md): Require that all files be wrapped in a `define` call
+* [one-dependency-per-line](docs/rules/one-dependency-per-line.md): Enforce line-break rules for AMD dependencies
+* [amd-function-arity](docs/rules/amd-function-arity.md): Ensure AMD callbacks have correct number of parameters
+* [sort-amd-paths](docs/rules/sort-amd-paths.md): Ensure that required paths are in alphabetical order
 
 ### Don't see the rule you're looking for?
 
