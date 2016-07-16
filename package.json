@@ -30,11 +30,7 @@
   "engines": {
     "node": ">=0.10"
   },
-  "dependencies": {
-    "lodash.uniq": "4.3.0"
-  },
   "devDependencies": {
-    "chai": "3.5.0",
     "coveralls": "2.11.9",
     "dateformat": "1.0.12",
     "eslint": "2.13.1",
