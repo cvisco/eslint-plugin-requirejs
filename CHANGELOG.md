@@ -1,3 +1,19 @@
+### v2.0.0 - July 16, 2016
+
+* Breaking: Bump ESLint peer version to 2.0.0 (fixes #76) (Casey Visco)
+* Breaking: Remove `rulesConfig` (fixes #84) (Casey Visco)
+* Fix: no-js-extension rule crashes on empty require (fixes #83) (Casey Visco)
+* Docs: Add Contributing Documentation (fixes #61) (Casey Visco)
+* Docs: Add Version Compatibility Section (Casey Visco)
+* Build: Remove rulesConfig related checks from makefile (Casey Visco)
+* Build: Fix RegExp in `changelog` target (Casey Visco)
+* Build: Add `unit` makefile target (Casey Visco)
+* Build: Add Node v6 to Travis CI Build (fixes #82) (Casey Visco)
+* Build: Roll ESLint Back to v2.13.1 (Casey Visco)
+* Upgrade: Update DevDependencies (fixes #80) (Casey Visco)
+* Upgrade: Update Dependencies (fixes #79) (Casey Visco)
+* Chore: Add npmrc file (Casey Visco)
+* Chore: Rename .eslintrc (Casey Visco)
 
 ### v0.10.0 - July 11, 2016
 
