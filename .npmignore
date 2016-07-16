@@ -1,0 +1,9 @@
+.editorconfig
+.eslintignore
+.eslintrc.yml
+.gitignore
+.npmrc
+.travis.yml
+makefile.js
+tests
+docs
