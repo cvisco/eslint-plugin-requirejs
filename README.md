@@ -93,8 +93,8 @@ Take a look at what's in progress for the next [milestone](https://github.com/cv
 
 Contributions are encouraged. There are a few ways you can help:
 
-* **Filing issues** - if you find a bug or would like to request a new rule or enhancement, [file an issue](https://github.com/cvisco/eslint-plugin-requirejs/issues)
-* **Submitting pull requests** - pick one of the open [issues](https://github.com/cvisco/eslint-plugin-requirejs/issues) to work on and submit a [pull request](https://github.com/cvisco/eslint-plugin-requirejs/pulls)
+* **Filing issues** - if you find a bug or would like to request a new rule or enhancement, [file an issue](docs/contributing/issues.md)
+* **Submitting pull requests** - pick one of the open [issues](https://github.com/cvisco/eslint-plugin-requirejs/issues) to work on and submit a [pull request](docs/contributing/pull-requests.md)
 
 ## License
 
