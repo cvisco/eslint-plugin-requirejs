@@ -24,6 +24,12 @@ Install [ESLint](https://www.github.com/eslint/eslint) either locally or globall
     $ npm install --save-dev eslint
     $ npm install --save-dev eslint-plugin-requirejs
 
+### Installing Older Versions
+
+Please note: this plugin requires ESLint **version 2.x or greater**. If you need to use it with an older version of ESLint, you may install a specific, previous version of the plugin:
+
+    $ npm install --save-dev eslint-plugin-requirejs@0.10.0
+
 ## Configuration
 
 Add the `plugins` section to your [config](http://eslint.org/docs/user-guide/configuring) file if not already present and specify `eslint-plugin-requirejs` as a plugin. The `eslint-plugin-` prefix may be omitted:
@@ -108,4 +114,3 @@ eslint-plugin-requirejs is licensed under the [MIT License](http://www.opensourc
 
 [packagequality-url]: http://packagequality.com/#?package=eslint-plugin-requirejs
 [packagequality-image]: http://npm.packagequality.com/shield/eslint-plugin-requirejs.svg?style=flat-square
-
