@@ -1,3 +1,9 @@
+### v2.0.1 - July 16, 2016
+
+* Chore: Add .npmignore (fixes #91) (Casey Visco)
+* Chore: Implement `unique` util function (fixes #89) (Casey Visco)
+* Chore: Implement `repeat` util function (fixes #87) (Casey Visco)
+
 ### v2.0.0 - July 16, 2016
 
 * Breaking: Bump ESLint peer version to 2.0.0 (fixes #76) (Casey Visco)
