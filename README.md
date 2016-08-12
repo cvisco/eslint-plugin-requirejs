@@ -26,7 +26,7 @@ Install [ESLint](https://www.github.com/eslint/eslint) either locally or globall
 
 ### Installing Older Versions
 
-Please note: this plugin requires ESLint **version 2.x or greater**. If you need to use it with an older version of ESLint, you may install a specific, previous version of the plugin:
+Please note: this plugin requires **Node 4.x or greater** and ESLint **version 3.x or greater**. If you need to use it with an older version of Node or ESLint, you may install a specific, previous version of the plugin:
 
     $ npm install --save-dev eslint-plugin-requirejs@0.10.0
 
