@@ -28,12 +28,14 @@
     "url": "https://github.com/cvisco/eslint-plugin-requirejs/issues"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=4"
   },
   "devDependencies": {
     "coveralls": "2.11.9",
     "dateformat": "1.0.12",
     "eslint": "2.13.1",
+    "eslint-config-eslint": "3.0.0",
+    "eslint-plugin-node": "2.0.0",
     "istanbul": "0.4.4",
     "mocha": "2.5.3",
     "semver": "5.2.0",

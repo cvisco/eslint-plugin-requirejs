@@ -43,7 +43,7 @@ var TEST_FILES = find("tests/lib/").filter(fileType("js")).join(" ");
  *
  * @private
  * @param  {String}   extension - the file extension (i.e. "js")
- * @return {Function} function to pass into a filter method
+ * @returns {Function} function to pass into a filter method
  */
 function fileType(extension) {
     return function (filename) {
@@ -56,7 +56,7 @@ function fileType(extension) {
  *
  * @private
  * @param  {String} cmd - command to execute
- * @return {String} result of executed command
+ * @returns {String} result of executed command
  */
 function execSilent(cmd) {
     return exec(cmd, { silent: true }).output;
@@ -69,7 +69,7 @@ function execSilent(cmd) {
  * @private
  * @param  {Array}  list - array of valid semver tags
  * @param  {String} tag  - tag to push if valid
- * @return {Array}  modified `list`
+ * @returns {Array}  modified `list`
  */
 function validSemverTag(list, tag) {
     if (semver.valid(tag)) {
@@ -83,7 +83,7 @@ function validSemverTag(list, tag) {
  * Retrieve a list of semver tags in descending order.
  *
  * @private
- * @return {Array} list of version tags
+ * @returns {Array} list of version tags
  */
 function getVersionTags() {
     return execSilent("git tag")
@@ -97,7 +97,8 @@ function getVersionTags() {
  * Create a release version, push tags and publish.
  *
  * @private
- * @param  {String} type - type of release to do (patch, minor, major)
+ * @param {String} type - type of release to do (patch, minor, major)
+ * @returns {void}
  */
 function release(type) {
     var newVersion;
@@ -148,6 +149,7 @@ target.lint = function () {
 /**
  * Verify that each rule is defined in index.js with the correct default
  * setting, has documentation and has tests.
+ * @returns {void}
  */
 target.checkRules = function () {
     echo("Verifying rules");
