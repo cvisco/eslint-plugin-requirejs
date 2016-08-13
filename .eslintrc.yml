@@ -18,3 +18,7 @@ rules:
     one-var:
         - error
         - never
+    func-style:
+        - error
+        - declaration
+        - allowArrowFunctions: true
