@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-conditional-require");
 
@@ -14,9 +14,7 @@ const ERROR = {
     type: "CallExpression"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("no-conditional-require", rule, {
+testRule("no-conditional-require", rule, {
 
     valid: [
         fixtures.AMD_REQUIRE,

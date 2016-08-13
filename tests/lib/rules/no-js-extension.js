@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-js-extension");
 
@@ -14,9 +14,7 @@ const ERROR = {
     type: "Literal"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("no-js-extension", rule, {
+testRule("no-js-extension", rule, {
 
     valid: [
         fixtures.BAD_REQUIRE_EMPTY,

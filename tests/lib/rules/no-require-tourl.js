@@ -5,16 +5,14 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const util = require("util");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-require-tourl");
 
 const MESSAGE = "Use of `require.%s` is not allowed.";
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("no-require-tourl", rule, {
+testRule("no-require-tourl", rule, {
 
     valid: [
         fixtures.AMD_REQUIRE_RELATIVE,

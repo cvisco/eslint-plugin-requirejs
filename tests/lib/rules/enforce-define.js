@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/enforce-define");
 
@@ -14,9 +14,7 @@ const ERROR = {
     type: "Program"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("enforce-define", rule, {
+testRule("enforce-define", rule, {
 
     valid: [
 

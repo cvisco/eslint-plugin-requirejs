@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-assign-exports");
 
@@ -14,9 +14,7 @@ const ERROR = {
     type: "AssignmentExpression"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("no-assign-exports", rule, {
+testRule("no-assign-exports", rule, {
 
     valid: [
         fixtures.CJS_WITH_EXPORTS,

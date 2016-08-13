@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-commonjs-module-exports");
 
@@ -14,9 +14,7 @@ const ERROR = {
     type: "AssignmentExpression"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("no-commonjs-module-exports", rule, {
+testRule("no-commonjs-module-exports", rule, {
 
     valid: [
         fixtures.OBJECT_DEFINE,

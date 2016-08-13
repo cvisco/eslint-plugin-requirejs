@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/one-dependency-per-line");
 
@@ -29,9 +29,7 @@ const NEVER_NAMES_ERROR = {
     type: "CallExpression"
 };
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("one-dependency-per-line", rule, {
+testRule("one-dependency-per-line", rule, {
 
     valid: [
 

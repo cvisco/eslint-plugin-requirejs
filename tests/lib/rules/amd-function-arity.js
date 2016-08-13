@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/amd-function-arity");
 
@@ -37,9 +37,7 @@ function makeTooFewParamsError(funcName, expected, actual) {
     return { message: message };
 }
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("amd-function-arity", rule, {
+testRule("amd-function-arity", rule, {
 
     valid: [
         // Dependency count and parameter counts equal-- always valid

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const RuleTester = require("eslint").RuleTester;
+const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/sort-amd-paths");
 
@@ -16,9 +16,7 @@ function makeErrorMessage(expectedPath) {
     };
 }
 
-const ruleTester = new RuleTester();
-
-ruleTester.run("sort-amd-paths", rule, {
+testRule("sort-amd-paths", rule, {
 
     valid: [
         // valid `define`
