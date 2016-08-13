@@ -5,18 +5,9 @@
 
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var RuleTester = require("eslint").RuleTester,
     fixtures = require("../../fixtures"),
     rule = require("../../../lib/rules/no-commonjs-wrapper");
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 var ERROR = {
     message: "Simplified CommonJS Wrapper form of `define` is not allowed",

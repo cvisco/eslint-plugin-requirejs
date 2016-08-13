@@ -5,18 +5,9 @@
 
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var RuleTester = require("eslint").RuleTester,
     fixtures = require("../../fixtures"),
     rule = require("../../../lib/rules/no-multiple-define");
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
 
@@ -41,7 +32,7 @@ ruleTester.run("no-multiple-define", rule, {
             errors: [{
                 message: "Multiple `define` calls in a single file are not permitted",
                 type: "CallExpression",
-                line: 3,
+                line: 4,
                 column: 1
             }]
         }

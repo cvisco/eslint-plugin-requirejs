@@ -1,3 +1,0 @@
-foo.require = {
-    bar: 'bar'
-};

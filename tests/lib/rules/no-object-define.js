@@ -5,18 +5,9 @@
 
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var RuleTester = require("eslint").RuleTester,
     fixtures = require("../../fixtures"),
     rule = require("../../../lib/rules/no-object-define");
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 var ERROR = {
     message: "Simple Name/Value Pairs form of `define` is not allowed",

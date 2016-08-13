@@ -5,18 +5,9 @@
 
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var RuleTester = require("eslint").RuleTester,
     fixtures = require("../../fixtures"),
     rule = require("../../../lib/rules/no-commonjs-exports");
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 var ERROR = {
     message: "Unexpected use of `exports` in module definition.",

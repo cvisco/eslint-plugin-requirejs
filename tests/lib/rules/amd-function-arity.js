@@ -5,17 +5,9 @@
 
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 var RuleTester = require("eslint").RuleTester,
     fixtures = require("../../fixtures"),
     rule = require("../../../lib/rules/amd-function-arity");
-
-//------------------------------------------------------------------------------
-// Helpers
-//------------------------------------------------------------------------------
 
 function makeTooManyParamsError(funcName, expected, actual) {
     var message = [
@@ -44,10 +36,6 @@ function makeTooFewParamsError(funcName, expected, actual) {
 
     return { message: message };
 }
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
 
