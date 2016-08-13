@@ -10,33 +10,20 @@
 
 /* eslint-env shelljs */
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
 require("shelljs/make");
 
-var path = require("path");
-var semver = require("semver");
-var dateformat = require("dateformat");
-var nodeCLI = require("shelljs-nodecli");
-
-//------------------------------------------------------------------------------
-// Constants
-//------------------------------------------------------------------------------
+const path = require("path");
+const semver = require("semver");
+const dateformat = require("dateformat");
+const nodeCLI = require("shelljs-nodecli");
 
 // Tools
-var MOCHA = path.normalize("./node_modules/mocha/bin/_mocha");
+const MOCHA = path.normalize("./node_modules/mocha/bin/_mocha");
 
 // Files
-var MAKEFILE = "./makefile.js";
-var JS_FILES = find("lib/").filter(fileType("js")).join(" ");
-var TEST_FILES = find("tests/lib/").filter(fileType("js")).join(" ");
-
-
-//------------------------------------------------------------------------------
-// Helpers
-//------------------------------------------------------------------------------
+const MAKEFILE = "./makefile.js";
+const JS_FILES = find("lib/").filter(fileType("js")).join(" ");
+const TEST_FILES = find("tests/lib/").filter(fileType("js")).join(" ");
 
 /**
  * Generate a function that matches files with a particular extension.
@@ -101,12 +88,10 @@ function getVersionTags() {
  * @returns {void}
  */
 function release(type) {
-    var newVersion;
-
     target.test();
 
     echo("Generating new version");
-    newVersion = execSilent("npm version " + type).trim();
+    const newVersion = execSilent("npm version " + type).trim();
 
     target.changelog();
 
@@ -125,12 +110,8 @@ function release(type) {
     exec("npm publish");
 }
 
-//------------------------------------------------------------------------------
-// Tasks
-//------------------------------------------------------------------------------
-
 target.lint = function () {
-    var errors = 0;
+    let errors = 0;
 
     echo("Linting makefile");
     errors += nodeCLI.exec("eslint", MAKEFILE).code;
@@ -154,27 +135,27 @@ target.lint = function () {
 target.checkRules = function () {
     echo("Verifying rules");
 
-    var errors = 0;
+    const ruleFiles = find("lib/rules/").filter(fileType("js"));
+    const configFile = require("./index");
+    const readmeText = cat("./README.md");
 
-    var ruleFiles = find("lib/rules/").filter(fileType("js"));
-    var configFile = require("./index");
-    var readmeText = cat("./README.md");
+    let errors = 0;
 
     function isDefinedInConfig(rule) {
         return configFile.rules.hasOwnProperty(rule);
     }
 
     function hasIdInTitle(docFile, id) {
-        var docText = cat(docFile);
-        var idInTitleRegExp = new RegExp("^# (.*?) \\(" + id + "\\)");
+        const docText = cat(docFile);
+        const idInTitleRegExp = new RegExp("^# (.*?) \\(" + id + "\\)");
 
         return idInTitleRegExp.test(docText);
     }
 
     ruleFiles.forEach(function (filename) {
-        var basename = path.basename(filename, ".js");
-        var docFilename = "docs/rules/" + basename + ".md";
-        var testFilename = "tests/lib/rules/" + basename + ".js";
+        const basename = path.basename(filename, ".js");
+        const docFilename = "docs/rules/" + basename + ".md";
+        const testFilename = "tests/lib/rules/" + basename + ".js";
 
         // Verify rule has documentation
 
@@ -216,7 +197,7 @@ target.checkRules = function () {
 };
 
 target.unit = function () {
-    var errors = 0;
+    let errors = 0;
 
     echo("Running test suite");
 
@@ -238,16 +219,16 @@ target.changelog = function () {
     echo("Generating changelog");
 
     // get most recent two tags
-    var tags = getVersionTags(),
-        rangeTags = tags.slice(tags.length - 2),
-        timestamp = dateformat(new Date(), "mmmm d, yyyy"),
-        semverRe = /^\* \d+\.\d+.\d+/;
+    const tags = getVersionTags();
+    const rangeTags = tags.slice(tags.length - 2);
+    const timestamp = dateformat(new Date(), "mmmm d, yyyy");
+    const semverRe = /^\* \d+\.\d+.\d+/;
 
     // output header
     ("### " + rangeTags[1] + " - " + timestamp + "\n").to("CHANGELOG.tmp");
 
     // get log statements
-    var logs = execSilent("git log --pretty=format:\"* %s (%an)\" " + rangeTags.join("..")).split(/\n/g);
+    let logs = execSilent("git log --pretty=format:\"* %s (%an)\" " + rangeTags.join("..")).split(/\n/g);
 
     logs = logs.filter(function (line) {
         return line.indexOf("Merge pull request") === -1 &&

@@ -5,31 +5,33 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/one-dependency-per-line");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/one-dependency-per-line");
 
-var ALWAYS_PATHS_ERROR = {
+const ALWAYS_PATHS_ERROR = {
     message: "Only one dependency path is permitted per line.",
     type: "CallExpression"
 };
 
-var ALWAYS_NAMES_ERROR = {
+const ALWAYS_NAMES_ERROR = {
     message: "Only one dependency name is permitted per line.",
     type: "CallExpression"
 };
 
-var NEVER_PATHS_ERROR = {
+const NEVER_PATHS_ERROR = {
     message: "Dependency paths must appear on one line.",
     type: "CallExpression"
 };
 
-var NEVER_NAMES_ERROR = {
+const NEVER_NAMES_ERROR = {
     message: "Dependency names must appear on one line.",
     type: "CallExpression"
 };
 
-(new RuleTester()).run("one-dependency-per-line", rule, {
+const ruleTester = new RuleTester();
+
+ruleTester.run("one-dependency-per-line", rule, {
 
     valid: [
 

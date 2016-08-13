@@ -5,11 +5,11 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-multiple-define");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-multiple-define");
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-multiple-define", rule, {
 

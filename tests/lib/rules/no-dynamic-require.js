@@ -5,16 +5,16 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-dynamic-require");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-dynamic-require");
 
-var ERROR = {
+const ERROR = {
     message: "Dynamic `require` calls are not allowed.",
     type: "CallExpression"
 };
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-dynamic-require", rule, {
 

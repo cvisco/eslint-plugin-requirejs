@@ -5,13 +5,13 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-assign-require");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-assign-require");
 
-var MESSAGE = "Invalid assignment to `require`.";
+const MESSAGE = "Invalid assignment to `require`.";
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-assign-require", rule, {
 

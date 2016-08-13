@@ -5,16 +5,16 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-assign-exports");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-assign-exports");
 
-var ERROR = {
+const ERROR = {
     message: "Invalid assignment to `exports`.",
     type: "AssignmentExpression"
 };
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-assign-exports", rule, {
 

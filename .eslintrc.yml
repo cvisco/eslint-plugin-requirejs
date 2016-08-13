@@ -14,3 +14,7 @@ rules:
           named: never
     no-use-before-define: off
     require-jsdoc: off
+    no-var: error
+    one-var:
+        - error
+        - never

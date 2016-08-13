@@ -5,14 +5,14 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    util = require("util"),
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-require-tourl");
+const RuleTester = require("eslint").RuleTester;
+const util = require("util");
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-require-tourl");
 
-var MESSAGE = "Use of `require.%s` is not allowed.";
+const MESSAGE = "Use of `require.%s` is not allowed.";
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-require-tourl", rule, {
 

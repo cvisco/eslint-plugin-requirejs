@@ -5,12 +5,12 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/amd-function-arity");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/amd-function-arity");
 
 function makeTooManyParamsError(funcName, expected, actual) {
-    var message = [
+    const message = [
         "Too many parameters in ",
         funcName,
         " callback (expected ",
@@ -24,7 +24,7 @@ function makeTooManyParamsError(funcName, expected, actual) {
 }
 
 function makeTooFewParamsError(funcName, expected, actual) {
-    var message = [
+    const message = [
         "Not enough parameters in ",
         funcName,
         " callback (expected ",
@@ -37,7 +37,7 @@ function makeTooFewParamsError(funcName, expected, actual) {
     return { message: message };
 }
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("amd-function-arity", rule, {
 

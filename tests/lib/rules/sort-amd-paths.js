@@ -5,9 +5,9 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/sort-amd-paths");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/sort-amd-paths");
 
 function makeErrorMessage(expectedPath) {
     return {
@@ -16,7 +16,7 @@ function makeErrorMessage(expectedPath) {
     };
 }
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("sort-amd-paths", rule, {
 

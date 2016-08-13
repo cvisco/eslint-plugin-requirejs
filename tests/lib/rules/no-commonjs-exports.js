@@ -5,16 +5,16 @@
 
 "use strict";
 
-var RuleTester = require("eslint").RuleTester,
-    fixtures = require("../../fixtures"),
-    rule = require("../../../lib/rules/no-commonjs-exports");
+const RuleTester = require("eslint").RuleTester;
+const fixtures = require("../../fixtures");
+const rule = require("../../../lib/rules/no-commonjs-exports");
 
-var ERROR = {
+const ERROR = {
     message: "Unexpected use of `exports` in module definition.",
     type: "AssignmentExpression"
 };
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run("no-commonjs-exports", rule, {
 
