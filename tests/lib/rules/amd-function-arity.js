@@ -9,32 +9,16 @@ const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/amd-function-arity");
 
-function makeTooManyParamsError(funcName, expected, actual) {
-    const message = [
-        "Too many parameters in ",
-        funcName,
-        " callback (expected ",
-        expected,
-        ", found ",
-        actual,
-        ")."
-    ].join("");
-
-    return { message: message };
+function tooManyParams(funcName, expected, actual) {
+    return {
+        message: `Too many parameters in ${funcName} callback (expected ${expected}, found ${actual}).`
+    };
 }
 
-function makeTooFewParamsError(funcName, expected, actual) {
-    const message = [
-        "Not enough parameters in ",
-        funcName,
-        " callback (expected ",
-        expected,
-        ", found ",
-        actual,
-        ")."
-    ].join("");
-
-    return { message: message };
+function tooFewParams(funcName, expected, actual) {
+    return {
+        message: `Not enough parameters in ${funcName} callback (expected ${expected}, found ${actual}).`
+    };
 }
 
 testRule("amd-function-arity", rule, {
@@ -151,198 +135,198 @@ testRule("amd-function-arity", rule, {
         {
             code: fixtures.AMD_DEFINE_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("define", 2, 3)]
+            errors: [tooManyParams("define", 2, 3)]
         },
         {
             code: fixtures.AMD_NAMED_DEFINE_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("define", 2, 3)]
+            errors: [tooManyParams("define", 2, 3)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("require", 2, 3)]
+            errors: [tooManyParams("require", 2, 3)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("requirejs", 2, 3)]
+            errors: [tooManyParams("requirejs", 2, 3)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_MANY_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("require", 2, 3)]
+            errors: [tooManyParams("require", 2, 3)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_MANY_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("requirejs", 2, 3)]
+            errors: [tooManyParams("requirejs", 2, 3)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("require", 1, 2)]
+            errors: [tooManyParams("require", 1, 2)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_MANY_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("requirejs", 1, 2)]
+            errors: [tooManyParams("requirejs", 1, 2)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_MANY_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("require", 1, 2)]
+            errors: [tooManyParams("require", 1, 2)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_MANY_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: true }],
-            errors: [makeTooManyParamsError("requirejs", 1, 2)]
+            errors: [tooManyParams("requirejs", 1, 2)]
         },
 
         // Extra dependencies (invalid since option not specified)
         {
             code: fixtures.AMD_DEFINE_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_NAMED_DEFINE_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         },
 
         // Extra dependencies (invalid since option set to false)
         {
             code: fixtures.AMD_DEFINE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_NAMED_DEFINE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: false }],
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         },
 
         // Extra dependencies (invalid since allowed paths are not the extra dependencies)
         {
             code: fixtures.AMD_DEFINE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_NAMED_DEFINE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("define", 2, 1)]
+            errors: [tooFewParams("define", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("require", 2, 1)]
+            errors: [tooFewParams("require", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIREJS_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("requirejs", 2, 1)]
+            errors: [tooFewParams("requirejs", 2, 1)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIRE_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("require", 1, 0)]
+            errors: [tooFewParams("require", 1, 0)]
         },
         {
             code: fixtures.AMD_REQUIREJS_SINGLEDEP_TOO_FEW_CALLBACK_PARAMS_WITH_ERRBACK,
             options: [{ allowExtraDependencies: ["x", "y"] }],
-            errors: [makeTooFewParamsError("requirejs", 1, 0)]
+            errors: [tooFewParams("requirejs", 1, 0)]
         }
     ]
 
