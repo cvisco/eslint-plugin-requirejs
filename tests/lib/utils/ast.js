@@ -419,3 +419,31 @@ describe("ast.hasCallback", function () {
     });
 
 });
+
+describe("ast.ancestor", function () {
+    const sampleNode = {
+        parent: {
+            parent: {
+                parent: {
+                    type: "bar"
+                },
+                type: "foo"
+            }
+        }
+    };
+
+    it("should return `true` if an ancestor satisfies the predicate", function () {
+        const actual = ast.ancestor((node) => node.type === "foo", sampleNode);
+        const expected = true;
+
+        assert.equal(actual, expected);
+    });
+
+    it("should return `false` if no ancestor satisfies the predicate", function () {
+        const actual = ast.ancestor((node) => node.type === "baz", sampleNode);
+        const expected = false;
+
+        assert.equal(actual, expected);
+    });
+
+});
