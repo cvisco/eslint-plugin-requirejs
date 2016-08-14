@@ -691,32 +691,6 @@ require(['path/to/a.js'], function (a) {
 });
 `;
 
-exports.ASSIGN_TO_FOO_REQUIRE = `
-foo.require = {
-    bar: 'bar'
-};
-`;
-
-exports.ASSIGN_TO_REQUIRE = `
-require = {
-    deps: ['path/to/a', 'path/to/b'],
-    callback: function (a, b) {
-        a.foo();
-        b.bar();
-    }
-};
-`;
-
-exports.ASSIGN_TO_WINDOW_REQUIRE = `
-window.require = {
-    deps: ['path/to/a', 'path/to/b'],
-    callback: function (a, b) {
-        a.foo();
-        b.bar();
-    }
-};
-`;
-
 exports.BAD_DEFINE = `
 define('foo', 'bar', false);
 `;
@@ -958,16 +932,6 @@ exports.CONDITIONAL_TERNARY_CJS_REQUIREJS = `
 define(function (require) {
     var lib = someCondition ? requirejs('path/to/a') : requirejs('path/to/b');
 });
-`;
-
-exports.DECLARE_REQUIRE = `
-var require = {
-    deps: ['path/to/a', 'path/to/b'],
-    callback: function (a, b) {
-        a.foo();
-        b.bar();
-    }
-};
 `;
 
 exports.DYNAMIC_AMD_REQUIREJS_WITH_ERRBACK = `
