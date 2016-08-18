@@ -9,6 +9,22 @@ const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-js-extension");
 
+// -----------------------------------------------------------------------------
+// Fixtures
+// -----------------------------------------------------------------------------
+
+const NON_REQUIREJS_DEFINE_WITH_JS_EXT = `
+    module([
+        'aaa.js'
+    ], function () {
+        /* ... */
+    });
+`;
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
+
 const ERROR = {
     message: "Don't use .js extension in dependency path.",
     type: "Literal"
@@ -54,6 +70,7 @@ testRule("no-js-extension", rule, {
         fixtures.CONDITIONAL_NESTED_AMD_REQUIREJS,
         fixtures.CONDITIONAL_TERNARY_CJS_REQUIRE,
         fixtures.CONDITIONAL_TERNARY_CJS_REQUIREJS,
+        NON_REQUIREJS_DEFINE_WITH_JS_EXT,
 
         // plugins check
 
