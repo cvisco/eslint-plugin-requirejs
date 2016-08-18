@@ -11,22 +11,22 @@ const rule = require("../../../lib/rules/one-dependency-per-line");
 
 const ALWAYS_PATHS_ERROR = {
     message: "Only one dependency path is permitted per line.",
-    type: "CallExpression"
+    type: "ArrayExpression"
 };
 
 const ALWAYS_NAMES_ERROR = {
     message: "Only one dependency name is permitted per line.",
-    type: "CallExpression"
+    type: "FunctionExpression"
 };
 
 const NEVER_PATHS_ERROR = {
     message: "Dependency paths must appear on one line.",
-    type: "CallExpression"
+    type: "ArrayExpression"
 };
 
 const NEVER_NAMES_ERROR = {
     message: "Dependency names must appear on one line.",
-    type: "CallExpression"
+    type: "FunctionExpression"
 };
 
 testRule("one-dependency-per-line", rule, {
