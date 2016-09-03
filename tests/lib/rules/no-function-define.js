@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-function-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-function-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-function-define");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Simple function form of `define` is not allowed",

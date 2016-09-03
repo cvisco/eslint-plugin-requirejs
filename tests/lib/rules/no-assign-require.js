@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-assign-require` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-assign-require` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";

@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `one-dependency-per-line` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `one-dependency-per-line` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/one-dependency-per-line");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ALWAYS_PATHS_ERROR = {
     message: "Only one dependency path is permitted per line.",

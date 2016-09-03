@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-js-extension` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-js-extension` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";

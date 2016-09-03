@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-multiple-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-multiple-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,22 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-multiple-define");
+
+// -----------------------------------------------------------------------------
+// Fixtures
+// -----------------------------------------------------------------------------
+
+const MULTIPLE_DEFINE_ONE_CALL = `
+    if (typeof define === "function") {
+        define(function () {
+            return { foo: 'bar' };
+        });
+    }
+`;
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 testRule("no-multiple-define", rule, {
 
@@ -21,7 +37,7 @@ testRule("no-multiple-define", rule, {
         fixtures.AMD_EMPTY_DEFINE,
         fixtures.NAMED_AMD_DEFINE,
         fixtures.NAMED_AMD_EMPTY_DEFINE,
-        fixtures.MULTIPLE_DEFINE_ONE_CALL
+        MULTIPLE_DEFINE_ONE_CALL
     ],
 
     invalid: [

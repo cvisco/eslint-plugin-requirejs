@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `enforce-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `enforce-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,32 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/enforce-define");
+
+// -----------------------------------------------------------------------------
+// Fixtures
+// -----------------------------------------------------------------------------
+
+const UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT = `
+    var foo = 'foo';
+
+    function bar() {
+        return foo;
+    }
+`;
+
+const UNWRAPPED_FILE = `
+    var foo = 'foo';
+
+    function bar() {
+        return foo;
+    }
+
+    window.bar = bar;
+`;
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "File must be wrapped in a `define` call",
@@ -41,7 +67,7 @@ testRule("enforce-define", rule, {
 
         // All of the invalid cases should work if we ignore the file
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "main.js",
             options: [ "main.js" ]
         },
@@ -63,19 +89,19 @@ testRule("enforce-define", rule, {
 
         // Ignore should work with full path
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "path/to/main.js",
             options: [ [ "main.js" ] ]
         },
 
         // Ignore should support multiple filenames
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "main.js",
             options: [ [ "main.js", "index.js" ] ]
         },
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "index.js",
             options: [ [ "main.js", "index.js" ] ]
         }
@@ -83,11 +109,11 @@ testRule("enforce-define", rule, {
 
     invalid: [
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             errors: [ERROR]
         },
         {
-            code: fixtures.UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT,
+            code: UNWRAPPED_FILE_NO_EXPRESSIONSTATEMENT,
             errors: [ERROR]
         },
         {
@@ -103,25 +129,25 @@ testRule("enforce-define", rule, {
             errors: [ERROR]
         },
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "foo.js",
             args: [ 1, "main.js" ],
             errors: [ERROR]
         },
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "foo.js",
             args: [ 1, [ "main.js", "index.js" ] ],
             errors: [ERROR]
         },
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "path/to/foo.js",
             args: [ 1, "main.js" ],
             errors: [ERROR]
         },
         {
-            code: fixtures.UNWRAPPED_FILE,
+            code: UNWRAPPED_FILE,
             filename: "path/to/main.js/foo.js",
             args: [ 1, "main.js" ],
             errors: [ERROR]

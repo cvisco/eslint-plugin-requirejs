@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-assign-exports` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-assign-exports` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-assign-exports");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Invalid assignment to `exports`.",

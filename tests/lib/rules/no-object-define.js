@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-object-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-object-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-object-define");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Simple Name/Value Pairs form of `define` is not allowed",

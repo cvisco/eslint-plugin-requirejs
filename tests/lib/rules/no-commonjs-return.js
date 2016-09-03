@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-commonjs-return` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-commonjs-return` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-commonjs-return");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Unexpected `return` in module definition.",

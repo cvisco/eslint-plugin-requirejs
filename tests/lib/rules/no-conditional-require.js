@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-conditional-require` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-conditional-require` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-conditional-require");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Conditional `require` calls are not allowed.",

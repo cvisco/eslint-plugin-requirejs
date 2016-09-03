@@ -1,3 +1,8 @@
+/**
+ * @file    Tests for AST helper functions
+ * @author  Casey Visco <cvisco@gmail.com>
+ */
+
 "use strict";
 
 const assert = require("assert");
@@ -421,27 +426,43 @@ describe("ast.hasCallback", function () {
 });
 
 describe("ast.ancestor", function () {
-    const sampleNode = {
-        parent: {
-            parent: {
-                parent: {
-                    type: "bar"
-                },
-                type: "foo"
-            }
-        }
-    };
+    const a = { type: "Program" };
+    const b = { type: "FunctionDeclaration", parent: a };
+    const c = { type: "BlockStatement", parent: b };
+    const d = { type: "ReturnStatement", parent: c };
 
     it("should return `true` if an ancestor satisfies the predicate", function () {
-        const actual = ast.ancestor((node) => node.type === "foo", sampleNode);
+        const actual = ast.ancestor((node) => node.type === "FunctionDeclaration", d);
         const expected = true;
 
         assert.equal(actual, expected);
     });
 
     it("should return `false` if no ancestor satisfies the predicate", function () {
-        const actual = ast.ancestor((node) => node.type === "baz", sampleNode);
+        const actual = ast.ancestor((node) => node.type === "VariableDeclaration", d);
         const expected = false;
+
+        assert.equal(actual, expected);
+    });
+
+});
+
+describe("ast.nearest", function () {
+    const a = { type: "Program" };
+    const b = { type: "FunctionDeclaration", parent: a };
+    const c = { type: "BlockStatement", parent: b };
+    const d = { type: "ReturnStatement", parent: c };
+
+    it("should return found node if an ancestor satisfies the predicate", function () {
+        const actual = ast.nearest((node) => node.type === "FunctionDeclaration", d);
+        const expected = b;
+
+        assert.equal(actual, expected);
+    });
+
+    it("should return `undefined` if no ancestor satisfies the predicate", function () {
+        const actual = ast.nearest((node) => node.type === "VariableDeclaration", d);
+        const expected = undefined;
 
         assert.equal(actual, expected);
     });

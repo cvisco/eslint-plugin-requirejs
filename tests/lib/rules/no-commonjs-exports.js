@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-commonjs-exports` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-commonjs-exports` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-commonjs-exports");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Unexpected use of `exports` in module definition.",

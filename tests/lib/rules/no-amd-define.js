@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-amd-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-amd-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-amd-define");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "AMD form of `define` is not allowed.",

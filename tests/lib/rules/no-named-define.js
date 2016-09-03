@@ -1,6 +1,6 @@
 /**
- * @fileoverview Tests for `no-named-define` rule
- * @author Casey Visco <cvisco@gmail.com>
+ * @file    Tests for `no-named-define` rule
+ * @author  Casey Visco <cvisco@gmail.com>
  */
 
 "use strict";
@@ -8,6 +8,10 @@
 const testRule = require("../../rule-tester");
 const fixtures = require("../../fixtures");
 const rule = require("../../../lib/rules/no-named-define");
+
+// -----------------------------------------------------------------------------
+// Tests
+// -----------------------------------------------------------------------------
 
 const ERROR = {
     message: "Named module form of `define` is not allowed",
