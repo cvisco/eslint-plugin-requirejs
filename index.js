@@ -23,5 +23,19 @@ module.exports = {
         "one-dependency-per-line": require("./lib/rules/one-dependency-per-line"),
         "amd-function-arity": require("./lib/rules/amd-function-arity"),
         "sort-amd-paths": require("./lib/rules/sort-amd-paths")
+    },
+    configs: {
+        recommended: {
+            env: {
+                amd: true
+            },
+            rules: {
+                "requirejs/no-invalid-define": "error",
+                "requirejs/no-invalid-require": "error",
+                "requirejs/no-multiple-define": "error",
+                "requirejs/no-assign-exports": "error",
+                "requirejs/no-js-extension": "error"
+            }
+        }
     }
 };
