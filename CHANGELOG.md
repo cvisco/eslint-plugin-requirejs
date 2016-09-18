@@ -1,3 +1,21 @@
+### v3.0.0-rc1 - September 18, 2016
+
+* Breaking: Convert rules to new format (fixes #81) (Casey Visco)
+* New: Export `plugin:requirejs/recommended` config (Casey Visco)
+* Update: Refactor codebase to ES6 (Casey Visco)
+* Chore: Extract generic AST functions to own file (Casey Visco)
+* Chore: Convert all `var` to `const` or `let` (Casey Visco)
+* Chore: Update ESLint Dev and Peer versions to 3.x (fixes #95) (Casey Visco)
+* Chore: Replace custom `repeat` function with native ES6 (fixes #94) (Casey Visco)
+* Chore: Update eslintrc to support Node 4 ES6 features (fixes #92) (Casey Visco)
+* Chore: Remove old node versions from Travis CI (fixes #90) (Casey Visco)
+* Build: Improve Test Coverage of no-assign-require rule (Casey Visco)
+* Build: Refactor error message creators for amd-function-arity (Casey Visco)
+* Build: Add wrapper around ESLint RuleTester (Casey Visco)
+* Build: Move test fixtures to a single file (fixes #93) (Casey Visco)
+* Docs: Format rule list into tables (Casey Visco)
+* Docs: Update version note in README (Casey Visco)
+
 ### v2.0.1 - July 16, 2016
 
 * Chore: Add .npmignore (fixes #91) (Casey Visco)

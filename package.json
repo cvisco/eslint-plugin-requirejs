@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-requirejs",
   "author": "Casey Visco <cvisco@gmail.com>",
-  "version": "2.0.1",
+  "version": "3.0.0-rc1",
   "description": "Enforce code conventions for RequireJS modules with ESLint",
   "homepage": "https://github.com/cvisco/eslint-plugin-requirejs",
   "main": "index.js",
