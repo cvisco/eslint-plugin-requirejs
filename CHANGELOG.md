@@ -1,4 +1,4 @@
-### v3.0.0-rc1 - September 18, 2016
+### v3.0.0 - September 26, 2016
 
 * Breaking: Convert rules to new format (fixes #81) (Casey Visco)
 * New: Export `plugin:requirejs/recommended` config (Casey Visco)
