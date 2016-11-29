@@ -198,15 +198,22 @@ describe("ast.isFunctionExpr", function () {
         assert.equal(actual, expected);
     });
 
-    it("should return `false` if node contains a `type` other than `FunctionExpression`", function () {
+    it("should return `false` if node contains a `type` other than `FunctionExpression` or `ArrowFunctionExpression`", function () {
         const actual = ast.isFunctionExpr({ type: "foobar" });
         const expected = false;
 
         assert.equal(actual, expected);
     });
 
-    it("should return `true` if supplied node is an `FunctionExpression`", function () {
+    it("should return `true` if supplied node is a `FunctionExpression`", function () {
         const actual = ast.isFunctionExpr({ type: "FunctionExpression" });
+        const expected = true;
+
+        assert.equal(actual, expected);
+    });
+
+    it("should return `true` if supplied node is an `ArrowFunctionExpression`", function () {
+        const actual = ast.isFunctionExpr({ type: "ArrowFunctionExpression" });
         const expected = true;
 
         assert.equal(actual, expected);
