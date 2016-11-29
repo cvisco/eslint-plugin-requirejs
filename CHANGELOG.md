@@ -1,3 +1,7 @@
+### v3.1.0 - November 29, 2016
+
+* New: Add support for Arrow Functions in `ast.isFunctionExpr` (#98) (Justin Cruz)
+
 ### v3.0.0 - September 26, 2016
 
 * Breaking: Convert rules to new format (fixes #81) (Casey Visco)
