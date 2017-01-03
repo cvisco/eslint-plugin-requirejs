@@ -1,3 +1,7 @@
+### v3.1.1 - January 2, 2017
+
+* Added travis ci support for node 7 (Amila Welihinda)
+
 ### v3.1.0 - November 29, 2016
 
 * New: Add support for Arrow Functions in `ast.isFunctionExpr` (#98) (Justin Cruz)
