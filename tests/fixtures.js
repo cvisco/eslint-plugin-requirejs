@@ -941,3 +941,7 @@ define({
     b: 'bar'
 });
 `;
+
+exports.DEFINE_WITH_ARROW_FUNCTION = `
+define('underscore', [], () => window._);
+`;
