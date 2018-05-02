@@ -1,3 +1,7 @@
+### v3.2.0 - May 1, 2018
+
+* Fix: Support ArrowFunctionExpression in one-dependency-per-line (#107) (Mackie Underdown)
+
 ### v3.1.1 - January 2, 2017
 
 * Added travis ci support for node 7 (Amila Welihinda)
