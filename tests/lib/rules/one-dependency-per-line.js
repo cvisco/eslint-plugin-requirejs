@@ -50,6 +50,11 @@ testRule("one-dependency-per-line", rule, {
         fixtures.BAD_REQUIRE_STRING_DEP,
         fixtures.BAD_REQUIREJS_STRING_DEP,
 
+        {
+            code: fixtures.DEFINE_WITH_ARROW_FUNCTION,
+            parserOptions: { ecmaVersion: 6 }
+        },
+
         // zero deps should never trigger warning, regardless of options
         {
             code: fixtures.AMD_DEPS_NONE,
