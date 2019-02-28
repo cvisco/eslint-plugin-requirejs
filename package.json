@@ -28,7 +28,7 @@
     "url": "https://github.com/cvisco/eslint-plugin-requirejs/issues"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "devDependencies": {
     "coveralls": "2.11.9",
