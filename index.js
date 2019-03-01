@@ -22,7 +22,8 @@ module.exports = {
         "enforce-define": require("./lib/rules/enforce-define"),
         "one-dependency-per-line": require("./lib/rules/one-dependency-per-line"),
         "amd-function-arity": require("./lib/rules/amd-function-arity"),
-        "sort-amd-paths": require("./lib/rules/sort-amd-paths")
+        "sort-amd-paths": require("./lib/rules/sort-amd-paths"),
+        "no-restricted-amd-modules": require("./lib/rules/no-restricted-amd-modules")
     },
     configs: {
         recommended: {

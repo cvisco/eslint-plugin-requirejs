@@ -54,5 +54,8 @@
     "major": "node makefile.js major",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "mocha": "mocha"
+  },
+  "dependencies": {
+    "ignore": "5.0.5"
   }
 }

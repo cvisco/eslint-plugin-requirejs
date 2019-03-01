@@ -105,6 +105,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 |        | :wrench: | [one-dependency-per-line](docs/rules/one-dependency-per-line.md) | Enforce line-break rules for AMD dependencies |
 |        |          | [amd-function-arity](docs/rules/amd-function-arity.md) | Ensure AMD callbacks have correct number of parameters |
 |        |          | [sort-amd-paths](docs/rules/sort-amd-paths.md) | Ensure that required paths are in alphabetical order |
+|        |          | [no-restricted-amd-modules](docs/rules/no-restricted-amd-modules.md) | Disallow specific amd modules |
 
 ### Don't see the rule you're looking for?
 
