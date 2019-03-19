@@ -1,3 +1,11 @@
+### v4.0.0 - March 19, 2019
+
+* Upgrade Istanbul (Casey Visco)
+* New: no-restricted-amd-modules rule (fixes #109) (Stefan Buck)
+* Build: Remove support for node v4 (#111) (Stefan Buck)
+* Add URL to rule documentation to the metadata (#105) (Landon Abney)
+* Build: Update Travis Node versions (#108) (Mackie Underdown)
+
 ### v3.2.0 - May 1, 2018
 
 * Fix: Support ArrowFunctionExpression in one-dependency-per-line (#107) (Mackie Underdown)
