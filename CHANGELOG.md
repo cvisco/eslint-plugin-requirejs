@@ -1,3 +1,7 @@
+### v4.0.1 - December 15, 2020
+
+* Add Power Support ppc64le for TravisCI (#112) (nagesh4193)
+
 ### v4.0.0 - March 19, 2019
 
 * Upgrade Istanbul (Casey Visco)
