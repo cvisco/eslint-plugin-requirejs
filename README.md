@@ -1,8 +1,6 @@
 [![npm][version-image]][version-url]
-[![Maintenance Status][status-image]][status-url]
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
-[![Package Quality][packagequality-image]][packagequality-url]
 
 # eslint-plugin-requirejs
 
@@ -125,14 +123,8 @@ eslint-plugin-requirejs is licensed under the [MIT License](http://www.opensourc
 [version-url]: https://www.npmjs.com/package/eslint-plugin-requirejs
 [version-image]: https://img.shields.io/npm/v/eslint-plugin-requirejs.svg?style=flat-square
 
-[status-url]: https://github.com/cvisco/eslint-plugin-requirejs/pulse
-[status-image]: http://img.shields.io/badge/status-maintained-brightgreen.svg?style=flat-square
-
 [travis-url]: https://travis-ci.org/cvisco/eslint-plugin-requirejs
 [travis-image]: http://img.shields.io/travis/cvisco/eslint-plugin-requirejs/master.svg?style=flat-square
 
 [coveralls-url]: https://coveralls.io/r/cvisco/eslint-plugin-requirejs?branch=master
 [coveralls-image]: https://img.shields.io/coveralls/cvisco/eslint-plugin-requirejs/master.svg?style=flat-square
-
-[packagequality-url]: http://packagequality.com/#?package=eslint-plugin-requirejs
-[packagequality-image]: http://npm.packagequality.com/shield/eslint-plugin-requirejs.svg?style=flat-square
