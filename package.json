@@ -31,7 +31,7 @@
     "node": ">=6"
   },
   "devDependencies": {
-    "coveralls": "2.11.9",
+    "coveralls": "2.13.3",
     "dateformat": "1.0.12",
     "eslint": "3.3.0",
     "eslint-config-eslint": "3.0.0",
